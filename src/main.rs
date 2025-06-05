@@ -25,10 +25,6 @@ fn append_data() {
         Ok(_) => entry(&file),
         Err(_) => create_file(&file),
     }
-
-    /*today_todos
-    .write("aadarsh is online ".as_bytes())
-    .expect("unable to write ");*/
 }
 
 fn entry(filename: &String) {
@@ -51,6 +47,9 @@ fn entry(filename: &String) {
     }
 }
 fn create_file(file_name: &String) {
-    File::create(file_name);
-    entry(&file_name);
+    let filestatus = File::create(file_name);
+    match filestatus {
+        Ok(_) => entry(&file_name),
+        Err(_) => println!("Unable to create file"),
+    }
 }
