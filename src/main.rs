@@ -1,9 +1,12 @@
+use chrono::format::{DelayedFormat, StrftimeItems};
 use chrono::{self};
-use std::fs::{File, OpenOptions};
+use std::fs::{self, File, OpenOptions};
 use std::io;
 use std::io::Write;
 
+//main menu is in main function
 fn main() {
+    let today = chrono::Utc::now().format("%d-%b-%Y");
     println!("Todo APP");
     println!("1..Current Tasks");
     println!("2..Update Todo");
@@ -13,12 +16,17 @@ fn main() {
     io::stdin()
         .read_line(&mut usr)
         .expect("Please Enter a valid Choice");
-    append_data();
+    if usr.trim() == "1" {
+        println!("Todays Tasks");
+        print_todays_task(&today);
+    } else if usr.trim() == "2" {
+        check(&today);
+    }
 }
 
-fn append_data() {
-    let today = chrono::Utc::now().format("%d-%b-%Y");
-    let file = format!("{}.txt", today);
+//if file is present calls entry, if not runs create_file
+fn check(today: &DelayedFormat<StrftimeItems>) {
+    let file = format!("{}.txt", &today);
     let today_todos = OpenOptions::new().open(&file);
 
     match &today_todos {
@@ -26,7 +34,25 @@ fn append_data() {
         Err(_) => create_file(&file),
     }
 }
-
+//prints todays current tasks
+fn print_todays_task(today: &DelayedFormat<StrftimeItems<'_>>) {
+    let file = format!("{}.txt", &today);
+    let contents = fs::read_to_string(&file);
+    println!("\nTasks for today are ");
+    match contents {
+        Ok(_) => {
+            for i in contents {
+                println!("{}", i);
+            }
+        }
+        Err(values) => {
+            println!("{}", values);
+            create_file(&file);
+            main();
+        }
+    }
+}
+//Appends data to file
 fn entry(filename: &String) {
     let mut today_todos = OpenOptions::new()
         .append(true)
@@ -37,7 +63,7 @@ fn entry(filename: &String) {
         let mut entry = String::new();
         println!("Enter your task for day : ");
         io::stdin().read_line(&mut entry).expect("unable to read");
-        if entry == "q" {
+        if entry.trim() == String::from("q") {
             main();
         } else {
             today_todos
@@ -46,6 +72,8 @@ fn entry(filename: &String) {
         }
     }
 }
+
+//creates file
 fn create_file(file_name: &String) {
     let filestatus = File::create(file_name);
     match filestatus {
