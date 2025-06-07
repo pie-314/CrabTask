@@ -1,0 +1,12 @@
+[
+  {
+  "date ":"06-Jun-2025",
+  "tasks":["Assigment 1 Maths", "Assigment 2 English","50% of math week 2", "Dijkstra algorithm"],
+  "completed":[0,3]
+  },
+  {
+  "date" :"07-Jun-2025",
+  "tasks":["read 1984", "Sets", "Dijkstra algorithm"],
+  "completed":[]
+  }
+]

@@ -1,17 +1,29 @@
 use chrono::format::{DelayedFormat, StrftimeItems};
 use chrono::{self};
+use serde::{Deserialize, Serialize};
 use std::fs::{self, File, OpenOptions};
 use std::io;
 use std::io::Write;
 
+#[derive(Deserialize, Serialize)]
+
+//Struct for user daily tasks
+struct Todo {
+    date: String,
+    task: Vec<String>,
+    completed: Vec<u32>,
+}
+
+fn json_parer() -> String {
+    return String::from("hello world!!");
+}
 //main menu is in main function
 fn main() {
     let today = chrono::Utc::now().format("%d-%b-%Y");
-    println!("Todo APP");
-    println!("1..Current Tasks");
-    println!("2..Update Todo");
-    println!("3..Weekly Todo");
-    println!("Enter : ");
+    println!("     \"{}\"", today);
+    println!("         TASKS");
+    print_todays_task(&today);
+    println!("press,d to delete,e to edit,m to mark a task");
     let mut usr = String::new();
     io::stdin()
         .read_line(&mut usr)
@@ -38,7 +50,6 @@ fn check(today: &DelayedFormat<StrftimeItems>) {
 fn print_todays_task(today: &DelayedFormat<StrftimeItems<'_>>) {
     let file = format!("{}.txt", &today);
     let contents = fs::read_to_string(&file);
-    println!("\nTasks for today are ");
     match contents {
         Ok(_) => {
             for i in contents {
