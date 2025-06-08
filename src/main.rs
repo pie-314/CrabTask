@@ -1,28 +1,49 @@
-use chrono::format::{DelayedFormat, StrftimeItems};
 use chrono::{self};
 use serde::{Deserialize, Serialize};
-use std::fs::{self, File, OpenOptions};
+use serde_json::from_str;
 use std::io;
-use std::io::Write;
 
-#[derive(Deserialize, Serialize)]
-
-//Struct for user daily tasks
+//parsing json and returning the todays task
+#[derive(Deserialize, Serialize, Debug)]
 struct Todo {
     date: String,
     task: Vec<String>,
     completed: Vec<u32>,
 }
 
-fn json_parer() -> String {
-    return String::from("hello world!!");
+fn json_parser(date: &str) -> Option<Todo> {
+    let json = std::fs::read_to_string("data/todo_data.json").unwrap();
+    let todos = from_str::<Vec<Todo>>(&json);
+
+    match todos {
+        Ok(value) => {
+            for daily in value {
+                if daily.date == date {
+                    return Some(daily);
+                }
+            }
+            None
+        }
+        Err(erro) => {
+            println!("Error parsing JSON: {:#?}", erro);
+            None
+        }
+    }
 }
-//main menu is in main function
+
 fn main() {
     let today = chrono::Utc::now().format("%d-%b-%Y");
+    add_task(&today.to_string());
+}
+
+//main menu is in main function
+fn main_menu() {
+    let today = chrono::Utc::now().format("%d-%b-%Y");
+    let val = json_parser(&today.to_string());
+    //println!("{:#?}", val);
     println!("     \"{}\"", today);
     println!("         TASKS");
-    print_todays_task(&today);
+    //    print_todays_task(&today);
     println!("press,d to delete,e to edit,m to mark a task");
     let mut usr = String::new();
     io::stdin()
@@ -30,65 +51,20 @@ fn main() {
         .expect("Please Enter a valid Choice");
     if usr.trim() == "1" {
         println!("Todays Tasks");
-        print_todays_task(&today);
+    //      print_todays_task(&today);
     } else if usr.trim() == "2" {
-        check(&today);
+        //    check(&today);
     }
 }
 
-//if file is present calls entry, if not runs create_file
-fn check(today: &DelayedFormat<StrftimeItems>) {
-    let file = format!("{}.txt", &today);
-    let today_todos = OpenOptions::new().open(&file);
+fn add_task(date: &str) {
+    let task = String::from("eat foood");
+    let json = std::fs::read_to_string("data/todo_data.json").unwrap();
+    let todos = from_str::<Vec<Todo>>(&json);
+    let current_val = json_parser(date);
+    println!("{:#?}", current_val);
 
-    match &today_todos {
-        Ok(_) => entry(&file),
-        Err(_) => create_file(&file),
-    }
-}
-//prints todays current tasks
-fn print_todays_task(today: &DelayedFormat<StrftimeItems<'_>>) {
-    let file = format!("{}.txt", &today);
-    let contents = fs::read_to_string(&file);
-    match contents {
-        Ok(_) => {
-            for i in contents {
-                println!("{}", i);
-            }
-        }
-        Err(values) => {
-            println!("{}", values);
-            create_file(&file);
-            main();
-        }
-    }
-}
-//Appends data to file
-fn entry(filename: &String) {
-    let mut today_todos = OpenOptions::new()
-        .append(true)
-        .write(true)
-        .open(&filename)
-        .unwrap();
-    loop {
-        let mut entry = String::new();
-        println!("Enter your task for day : ");
-        io::stdin().read_line(&mut entry).expect("unable to read");
-        if entry.trim() == String::from("q") {
-            main();
-        } else {
-            today_todos
-                .write(entry.as_bytes())
-                .expect("unable to write!");
-        }
-    }
+    //std:fs:write("file.json", serde_json::to_string(&my_struct).unwrap())
 }
 
-//creates file
-fn create_file(file_name: &String) {
-    let filestatus = File::create(file_name);
-    match filestatus {
-        Ok(_) => entry(&file_name),
-        Err(_) => println!("Unable to create file"),
-    }
-}
+fn newday() {}
