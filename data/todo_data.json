@@ -1,12 +1,44 @@
 [
-{
-  "date":"06-Jun-2025",
-  "task":["Assigment 1 Maths", "Assigment 2 English","50% of math week 2", "Dijkstra algorithm"],
-  "completed":[0,3]
+  {
+    "date": "06-Jun-2025",
+    "task": [
+      "Assigment 1 Maths",
+      "Assigment 2 English",
+      "50% of math week 2",
+      "Dijkstra algorithm"
+    ],
+    "completed": [
+      0,
+      3
+    ]
   },
   {
-  "date" :"08-Jun-2025",
-  "task":["read 1984", "Sets", "Dijkstra algorithm"],
-  "completed":[1]
+    "date": "08-Jun-2025",
+    "task": [
+      "read 1984",
+      "Sets",
+      "Dijkstra algorithm"
+    ],
+    "completed": [
+      1
+    ]
+  },
+  {
+    "date": "09-Jun-2025",
+    "task": [
+      "eat foood",
+      "how are you",
+      "hello"
+    ],
+    "completed": []
+  },
+  {
+    "date": "10-Jun-2025",
+    "task": [
+      "hello",
+      "eat food\n",
+      "take bath \n"
+    ],
+    "completed": []
   }
 ]
