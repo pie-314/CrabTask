@@ -1,84 +1,66 @@
-mod types;
+use color_eyre::{
+    eyre::{Ok, Result},
+    owo_colors::OwoColorize,
+};
+use ratatui::{
+    crossterm::event::{self, Event},
+    layout::{Constraint, Layout},
+    style::{Color, Stylize},
+    text::Line,
+    widgets::{block::title, Block, BorderType, List, Paragraph, Widget},
+    DefaultTerminal, Frame,
+};
 
-use chrono::{self};
-use serde_json::{from_str, to_string_pretty};
-use std::fs;
-use std::io;
-use types::Todo;
-
-fn json_parser(date: &str) -> Option<Todo> {
-    let json = std::fs::read_to_string("data/todo_data.json").unwrap();
-    let todos = from_str::<Vec<Todo>>(&json);
-
-    match todos {
-        Ok(value) => {
-            for daily in value {
-                if daily.date == date {
-                    return Some(daily);
-                }
-            }
-            None
-        }
-        Err(erro) => {
-            println!("Error parsing JSON: {:#?}", erro);
-            None
-        }
-    }
+#[derive(Debug, Default)]
+struct AppState {
+    items: Vec<TodoItem>,
 }
 
-fn main() {
-    let today = chrono::Utc::now().format("%d-%b-%Y");
-    main_menu(today.to_string());
+#[derive(Debug, Default)]
+struct TodoItem {
+    is_done: bool,
+    description: String,
 }
 
-//main menu is in main function
-fn main_menu(today: String) {
-    //println!("{:#?}", val);
-    println!("     \"{}\"", &today);
-    println!("{:#?}", json_parser(&today.to_string()));
-    println!("         TASKS");
-    //    print_todays_task(&today);
-    println!("press,d to delete,a to add,m to mark a task");
-    let mut usr = String::new();
-    io::stdin()
-        .read_line(&mut usr)
-        .expect("Please Enter a valid Choice");
-    if usr.trim() == "a" {
-        add_task_loop(&today);
-    } else if usr.trim() == "2" {
-        //    check(&today);
-    }
+fn main() -> Result<()> {
+    let mut state = AppState::default();
+    color_eyre::install()?;
+    let terminal = ratatui::init();
+    let result = ui(terminal, &mut state);
+    ratatui::restore();
+    result
 }
 
-//loop of add task
-fn add_task_loop(date: &str) {
+fn ui(mut terminal: DefaultTerminal, app_state: &mut AppState) -> Result<()> {
     loop {
-        println!("\n Enter Task : ");
-        let mut task = String::new();
-        io::stdin()
-            .read_line(&mut task)
-            .expect("some error occured");
-        if task.trim() == "q" {
-            main();
-        } else {
-            add_task(&date, task);
+        // Rendering
+        terminal.draw(|f| render(f, app_state))?;
+
+        //Input Handler
+        if let Event::Key(key) = event::read()? {
+            match key.code {
+                event::KeyCode::Esc => {
+                    break;
+                }
+                _ => {}
+            }
         }
     }
+    Ok(())
 }
 
-fn add_task(date: &str, task: String) {
-    let json = fs::read_to_string("data/todo_data.json").unwrap();
-    let mut todos: Vec<Todo> = from_str(&json).unwrap_or_else(|_| vec![]);
+fn render(frame: &mut Frame, app_state: &AppState) {
+    let [border_area] = Layout::vertical([Constraint::Fill(1)])
+        .margin(1)
+        .areas(frame.area());
 
-    if let Some(todo) = todos.iter_mut().find(|t| t.date == date) {
-        todo.task.push(task);
-    } else {
-        todos.push(Todo {
-            date: date.to_string(),
-            task: vec![task],
-            completed: vec![],
-        });
-    }
-    fs::write("data/todo_data.json", to_string_pretty(&todos).unwrap()).unwrap();
-    println!("Task added successfully.");
+    let title = Line::from("CrabTask".bold());
+    Block::bordered()
+        .title(title.centered())
+        .border_type(BorderType::Thick)
+        .fg(Color::Yellow)
+        .render(border_area, frame.buffer_mut());
+    //List::new(app_state::items).render(area, buf);
+
+    //Paragraph::new("Hello from the application").render(frame.area(), frame.buffer_mut());
 }
