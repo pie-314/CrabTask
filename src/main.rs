@@ -1,43 +1,20 @@
+mod types;
+use types::{AppState, Todo};
+
 use color_eyre::eyre::{Ok, Result};
 use ratatui::{
     crossterm::event::{self, Event},
     layout::{Constraint, Layout},
     style::{Color, Style, Stylize},
     text::{Line, Span},
-    widgets::{
-        block::title, calendar::CalendarEventStore, Block, BorderType, Borders, List, Paragraph,
-        Widget,
-    },
+    widgets::{Block, BorderType, Borders, List, ListItem, Paragraph, Widget},
     DefaultTerminal, Frame,
 };
-use serde::{Deserialize, Serialize};
 use serde_json::from_str;
 use std::result::Result::Err;
 use std::result::Result::Ok as Okk;
 
-use chrono::{Datelike, Local, NaiveDate, Weekday};
-
-#[derive(Debug, Default)]
-struct AppState {
-    tasks: Vec<Todo>,
-}
-
-#[derive(Deserialize, Serialize, Debug)]
-struct Todo {
-    date: String,
-    task: String,
-    is_done: bool,
-}
-
-//Main function
-fn main() -> Result<()> {
-    let mut state = AppState::default();
-    color_eyre::install()?;
-    let terminal = ratatui::init();
-    let result = ui(terminal, &mut state);
-    ratatui::restore();
-    result
-}
+use chrono::{Datelike, Local, NaiveDate};
 
 // JSON parsing
 fn json_parser(date: &str) -> Option<Todo> {
@@ -59,6 +36,64 @@ fn json_parser(date: &str) -> Option<Todo> {
         }
     }
 }
+impl AppState {
+    fn next(&mut self) {
+        // TOTAL number of items
+        let len = self.tasks.len();
+        if len == 0 {
+            return; // nothing to select
+        }
+
+        let i = match self.list_state.selected() {
+            Some(i) => {
+                if i >= len - 1 {
+                    0 // wrap to first
+                } else {
+                    i + 1
+                }
+            }
+            None => 0,
+        };
+        self.list_state.select(Some(i));
+    }
+
+    fn previous(&mut self) {
+        let len = self.tasks.len();
+        if len == 0 {
+            return;
+        }
+
+        let i = match self.list_state.selected() {
+            Some(i) => {
+                if i == 0 {
+                    len - 1 // wrap to last
+                } else {
+                    i - 1
+                }
+            }
+            None => 0,
+        };
+        self.list_state.select(Some(i));
+    }
+}
+//Main function
+fn main() -> Result<()> {
+    color_eyre::install()?;
+    let mut state = AppState::default();
+
+    // Example tasks
+    state.tasks = vec![
+        "Buy groceries".to_string(),
+        "Finish Rust project".to_string(),
+        "Read a book".to_string(),
+    ];
+    state.list_state.select(Some(0)); // start from the first item
+
+    let terminal = ratatui::init();
+    let result = ui(terminal, &mut state);
+    ratatui::restore();
+    result
+}
 
 // Loading UI
 fn ui(mut terminal: DefaultTerminal, app_state: &mut AppState) -> Result<()> {
@@ -71,9 +106,10 @@ fn ui(mut terminal: DefaultTerminal, app_state: &mut AppState) -> Result<()> {
         if event::poll(std::time::Duration::from_millis(100))? {
             if let Event::Key(key) = event::read()? {
                 match key.code {
-                    event::KeyCode::Esc => {
-                        break;
-                    }
+                    event::KeyCode::Char(q) => break,
+                    event::KeyCode::Char(Q) => break,
+                    event::KeyCode::Down => app_state.next(),
+                    event::KeyCode::Up => app_state.previous(),
                     _ => {}
                 }
             }
@@ -216,10 +252,26 @@ fn render(frame: &mut Frame, app_state: &AppState) {
 
     frame.render_widget(calendar_widget, right_middle);
 
+    let quote = Line::from("quote".bold().italic());
+    Block::bordered()
+        .title(quote)
+        .border_type(BorderType::Rounded)
+        .render(right_bottom, frame.buffer_mut());
+
     //Each day Task
     let today = Line::from("Tasks".bold().italic());
-    Block::bordered()
+    let tasks_block = Block::bordered()
         .title(today)
-        .border_type(BorderType::Rounded)
-        .render(left_area, frame.buffer_mut());
+        .border_type(BorderType::Rounded);
+
+    let items: Vec<ListItem> = app_state
+        .tasks
+        .iter()
+        .map(|t| ListItem::new(t.as_str()))
+        .collect();
+
+    let list = List::new(items).block(tasks_block).highlight_symbol(">> "); // highlight current item
+
+    // Renders with persisted selection state from AppState
+    frame.render_stateful_widget(list, left_area, &mut app_state.list_state.clone());
 }
