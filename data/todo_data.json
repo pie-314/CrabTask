@@ -3,7 +3,7 @@
     "id": "1",
     "title": "Buy groceries",
     "completed": false,
-    "due_date": "2025-08-15",
+    "due_date": "2025-08-20",
     "priority": "high",
     "notes": "Buy milk, bread, and eggs"
   },
@@ -11,7 +11,7 @@
     "id": "2",
     "title": "Finish Rust project",
     "completed": true,
-    "due_date": "2025-08-10",
+    "due_date": "2025-08-20",
     "priority": "medium",
     "notes": "Submit before deadline"
   },
@@ -107,7 +107,7 @@
     "id": "14",
     "title": "Attend webinar on AI tools",
     "completed": false,
-    "due_date": "2025-08-10",
+    "due_date": "2025-08-20",
     "priority": "medium",
     "notes": "Register in advance"
   },

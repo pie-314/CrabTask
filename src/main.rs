@@ -1,7 +1,8 @@
+mod json_parser;
 mod types;
-use types::{AppState, Todo};
-
+use chrono;
 use color_eyre::eyre::{Ok, Result};
+use json_parser::json_parser;
 use ratatui::{
     crossterm::event::{self, Event},
     layout::{Constraint, Layout},
@@ -10,32 +11,10 @@ use ratatui::{
     widgets::{Block, BorderType, Borders, List, ListItem, Paragraph, Widget},
     DefaultTerminal, Frame,
 };
-use serde_json::from_str;
-use std::result::Result::Err;
-use std::result::Result::Ok as Okk;
+use types::AppState;
 
 use chrono::{Datelike, Local, NaiveDate};
 
-// JSON parsing
-fn json_parser(date: &str) -> Option<Todo> {
-    let json = std::fs::read_to_string("data/todo_data.json").unwrap();
-    let todos = from_str::<Vec<Todo>>(&json);
-
-    match todos {
-        Okk(value) => {
-            for daily in value {
-                if daily.date == date {
-                    return Some(daily);
-                }
-            }
-            None
-        }
-        Err(erro) => {
-            println!("Error parsing JSON: {:#?}", erro);
-            None
-        }
-    }
-}
 impl AppState {
     fn next(&mut self) {
         // TOTAL number of items
@@ -80,13 +59,17 @@ impl AppState {
 fn main() -> Result<()> {
     color_eyre::install()?;
     let mut state = AppState::default();
-
-    // Example tasks
-    state.tasks = vec![
-        "Buy groceries".to_string(),
-        "Finish Rust project".to_string(),
-        "Read a book".to_string(),
-    ];
+    let today = chrono::Local::now()
+        .date_naive()
+        .format("%Y-%m-%d")
+        .to_string();
+    let result = json_parser(today);
+    let tasks: Vec<String> = result
+        .into_iter()
+        .map(|todo| todo.title.to_string())
+        .collect();
+    println!("{:#?}", &tasks);
+    state.tasks = tasks;
     state.list_state.select(Some(0)); // start from the first item
 
     let terminal = ratatui::init();
@@ -106,8 +89,8 @@ fn ui(mut terminal: DefaultTerminal, app_state: &mut AppState) -> Result<()> {
         if event::poll(std::time::Duration::from_millis(100))? {
             if let Event::Key(key) = event::read()? {
                 match key.code {
-                    event::KeyCode::Char(q) => break,
-                    event::KeyCode::Char(Q) => break,
+                    event::KeyCode::Char('q') => break,
+                    event::KeyCode::Char('Q') => break,
                     event::KeyCode::Down => app_state.next(),
                     event::KeyCode::Up => app_state.previous(),
                     _ => {}

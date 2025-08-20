@@ -12,7 +12,7 @@ pub struct Todo {
     pub id: String,
     pub title: String,
     pub completed: bool,
-    pub date: String, // usually "YYYY-MM-DD" format
+    pub due_date: String, // usually "YYYY-MM-DD" format
     pub priority: String,
     pub notes: String,
 }
