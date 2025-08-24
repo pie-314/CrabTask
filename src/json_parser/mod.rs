@@ -16,9 +16,11 @@ pub fn json_parser(date: String) -> Vec<Todo> {
                 .collect();
             matched
         }
-        Err(erro) => {
-            println!("Error parsing JSON: {:#?}", erro);
+        Err(err) => {
+            println!("Error parsing JSON: {:#?}", err);
             vec![]
         }
     }
 }
+
+pub fn json_writer() {}

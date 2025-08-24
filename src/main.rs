@@ -5,10 +5,10 @@ use color_eyre::eyre::{Ok, Result};
 use json_parser::json_parser;
 use ratatui::{
     crossterm::event::{self, Event},
-    layout::{Constraint, Layout},
+    layout::{Constraint, Flex, Layout, Rect},
     style::{Color, Style, Stylize},
     text::{Line, Span},
-    widgets::{Block, BorderType, Borders, List, ListItem, Paragraph, Widget},
+    widgets::{Block, BorderType, Borders, Clear, List, ListItem, Paragraph, Widget},
     DefaultTerminal, Frame,
 };
 use types::AppState;
@@ -17,7 +17,6 @@ use chrono::{Datelike, Local, NaiveDate};
 
 impl AppState {
     fn next(&mut self) {
-        // TOTAL number of items
         let len = self.tasks.len();
         if len == 0 {
             return; // nothing to select
@@ -59,16 +58,18 @@ impl AppState {
 fn main() -> Result<()> {
     color_eyre::install()?;
     let mut state = AppState::default();
+
     let today = chrono::Local::now()
         .date_naive()
         .format("%Y-%m-%d")
         .to_string();
+
     let result = json_parser(today);
     let tasks: Vec<String> = result
         .into_iter()
         .map(|todo| todo.title.to_string())
         .collect();
-    println!("{:#?}", &tasks);
+
     state.tasks = tasks;
     state.list_state.select(Some(0)); // start from the first item
 
@@ -81,10 +82,7 @@ fn main() -> Result<()> {
 // Loading UI
 fn ui(mut terminal: DefaultTerminal, app_state: &mut AppState) -> Result<()> {
     loop {
-        // Rendering
         terminal.draw(|f| render(f, app_state))?;
-
-        //Input Handler
 
         if event::poll(std::time::Duration::from_millis(100))? {
             if let Event::Key(key) = event::read()? {
@@ -93,6 +91,7 @@ fn ui(mut terminal: DefaultTerminal, app_state: &mut AppState) -> Result<()> {
                     event::KeyCode::Char('Q') => break,
                     event::KeyCode::Down => app_state.next(),
                     event::KeyCode::Up => app_state.previous(),
+                    event::KeyCode::Char('a') => app_state.show_popup = !app_state.show_popup,
                     _ => {}
                 }
             }
@@ -257,4 +256,18 @@ fn render(frame: &mut Frame, app_state: &AppState) {
 
     // Renders with persisted selection state from AppState
     frame.render_stateful_widget(list, left_area, &mut app_state.list_state.clone());
+    if app_state.show_popup {
+        let block = Block::bordered().title("Popup");
+        let area = popup_area(frame.area(), 60, 20);
+        frame.render_widget(Clear, area); //this clears out the background
+        frame.render_widget(block, area);
+    }
+
+    fn popup_area(area: Rect, percent_x: u16, percent_y: u16) -> Rect {
+        let vertical = Layout::vertical([Constraint::Percentage(percent_y)]).flex(Flex::Center);
+        let horizontal = Layout::horizontal([Constraint::Percentage(percent_x)]).flex(Flex::Center);
+        let [area] = vertical.areas(area);
+        let [area] = horizontal.areas(area);
+        area
+    }
 }
