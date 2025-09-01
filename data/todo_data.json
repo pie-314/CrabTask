@@ -3,7 +3,7 @@
     "id": "1",
     "title": "Buy groceries",
     "completed": false,
-    "due_date": "2025-08-20",
+    "due_date": "2025-08-31",
     "priority": "high",
     "notes": "Buy milk, bread, and eggs"
   },
@@ -19,7 +19,7 @@
     "id": "3",
     "title": "Morning workout",
     "completed": false,
-    "due_date": "2025-08-12",
+    "due_date": "2025-09-01",
     "priority": "low",
     "notes": "Yoga and light cardio"
   },
@@ -27,7 +27,7 @@
     "id": "4",
     "title": "Read 'Atomic Habits'",
     "completed": false,
-    "due_date": "2025-08-20",
+    "due_date": "2025-09-01",
     "priority": "medium",
     "notes": "Read at least 30 pages"
   },
@@ -107,7 +107,7 @@
     "id": "14",
     "title": "Attend webinar on AI tools",
     "completed": false,
-    "due_date": "2025-08-20",
+    "due_date": "2025-08-31",
     "priority": "medium",
     "notes": "Register in advance"
   },

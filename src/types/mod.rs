@@ -24,7 +24,7 @@ pub struct Todo {
     pub notes: String,
 }
 
-pub enum InputMode {
+enum InputMode {
     Normal,
     Editing,
 }

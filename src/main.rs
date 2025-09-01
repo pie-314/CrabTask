@@ -4,11 +4,14 @@ use chrono;
 use color_eyre::eyre::{Ok, Result};
 use json_parser::json_parser;
 use ratatui::{
-    crossterm::event::{self, Event},
+    crossterm::{
+        event::{self, Event},
+        terminal::enable_raw_mode,
+    },
     layout::{Constraint, Flex, Layout, Rect},
-    style::{Color, Style, Stylize},
+    style::{Color, Modifier, Style, Stylize},
     text::{Line, Span},
-    widgets::{Block, BorderType, Borders, Clear, List, ListItem, Paragraph, Widget},
+    widgets::{Block, BorderType, Borders, List, ListItem, Paragraph, Widget},
     DefaultTerminal, Frame,
 };
 use types::AppState;
@@ -56,6 +59,7 @@ impl AppState {
 }
 //Main function
 fn main() -> Result<()> {
+    enable_raw_mode()?;
     color_eyre::install()?;
     let mut state = AppState::default();
 
@@ -246,6 +250,26 @@ fn render(frame: &mut Frame, app_state: &AppState) {
         .title(today)
         .border_type(BorderType::Rounded);
 
+    let help_text = vec![Line::from(vec![
+        Span::raw("Q/q"),
+        Span::styled(" : quit", Style::default().add_modifier(Modifier::BOLD)),
+        Span::raw(" | "),
+        Span::raw("Arrow Up/Down : "),
+        Span::styled(
+            "Moving through list",
+            Style::default().add_modifier(Modifier::BOLD),
+        ),
+        Span::raw(" | "),
+        Span::raw("Esc "),
+        Span::styled("Exit", Style::default().add_modifier(Modifier::BOLD)),
+    ])];
+
+    let help_paragraph = Paragraph::new(help_text)
+        .block(Block::default())
+        .style(Style::default().add_modifier(Modifier::DIM));
+    // Render your full_bottom block in the bottom area
+    frame.render_widget(help_paragraph, full_bottom);
+
     let items: Vec<ListItem> = app_state
         .tasks
         .iter()
@@ -254,13 +278,18 @@ fn render(frame: &mut Frame, app_state: &AppState) {
 
     let list = List::new(items).block(tasks_block).highlight_symbol(">> "); // highlight current item
 
-    // Renders with persisted selection state from AppState
     frame.render_stateful_widget(list, left_area, &mut app_state.list_state.clone());
+
+    //Input popup
     if app_state.show_popup {
-        let block = Block::bordered().title("Popup");
+        let block = Block::default()
+            .title("Input")
+            .borders(ratatui::widgets::Borders::ALL);
         let area = popup_area(frame.area(), 60, 20);
-        frame.render_widget(Clear, area); //this clears out the background
-        frame.render_widget(block, area);
+        let inputis = Paragraph::new("hello")
+            .block(block)
+            .style(Style::default().add_modifier(Modifier::BOLD));
+        frame.render_widget(inputis, area);
     }
 
     fn popup_area(area: Rect, percent_x: u16, percent_y: u16) -> Rect {
