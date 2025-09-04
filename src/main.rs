@@ -8,15 +8,32 @@ use ratatui::{
         event::{self, Event},
         terminal::enable_raw_mode,
     },
-    layout::{Constraint, Flex, Layout, Rect},
+    layout::{Constraint, Flex, Layout, Position, Rect},
     style::{Color, Modifier, Style, Stylize},
-    text::{Line, Span},
-    widgets::{Block, BorderType, Borders, List, ListItem, Paragraph, Widget},
+    text::{Line, Span, Text},
+    widgets::{Block, BorderType, Borders, List, ListItem, ListState, Paragraph, Widget},
     DefaultTerminal, Frame,
 };
 use types::AppState;
 
 use chrono::{Datelike, Local, NaiveDate};
+
+use crate::types::InputHandler;
+
+impl Default for AppState {
+    fn default() -> Self {
+        Self {
+            tasks: Vec::new(),
+            list_state: ListState::default(),
+            show_popup: false,
+            input_state: InputHandler {
+                input: String::new(),
+                messages: Vec::new(),
+                character_index: 0,
+            },
+        }
+    }
+}
 
 impl AppState {
     fn next(&mut self) {
@@ -90,13 +107,24 @@ fn ui(mut terminal: DefaultTerminal, app_state: &mut AppState) -> Result<()> {
 
         if event::poll(std::time::Duration::from_millis(100))? {
             if let Event::Key(key) = event::read()? {
-                match key.code {
-                    event::KeyCode::Char('q') => break,
-                    event::KeyCode::Char('Q') => break,
-                    event::KeyCode::Down => app_state.next(),
-                    event::KeyCode::Up => app_state.previous(),
-                    event::KeyCode::Char('a') => app_state.show_popup = !app_state.show_popup,
-                    _ => {}
+                if app_state.show_popup {
+                    match key.code {
+                        event::KeyCode::Char(c) => enter_char(&mut app_state.input_state, c),
+                        event::KeyCode::Backspace => delete_char(&mut app_state.input_state),
+                        event::KeyCode::Enter => submit_message(&mut app_state.input_state),
+                        event::KeyCode::Left => move_cursor_left(&mut app_state.input_state),
+                        event::KeyCode::Right => move_cursor_right(&mut app_state.input_state),
+                        event::KeyCode::Esc => app_state.show_popup = false,
+                        _ => {}
+                    }
+                } else {
+                    match key.code {
+                        event::KeyCode::Char('q') | event::KeyCode::Char('Q') => break,
+                        event::KeyCode::Down => app_state.next(),
+                        event::KeyCode::Up => app_state.previous(),
+                        event::KeyCode::Char('a') => app_state.show_popup = !app_state.show_popup,
+                        _ => {}
+                    }
                 }
             }
         }
@@ -281,15 +309,17 @@ fn render(frame: &mut Frame, app_state: &AppState) {
     frame.render_stateful_widget(list, left_area, &mut app_state.list_state.clone());
 
     //Input popup
+    let input = Paragraph::new(app_state.input_state.input.as_str())
+        .block(Block::bordered().title("Input"));
     if app_state.show_popup {
-        let block = Block::default()
-            .title("Input")
-            .borders(ratatui::widgets::Borders::ALL);
-        let area = popup_area(frame.area(), 60, 20);
-        let inputis = Paragraph::new("hello")
-            .block(block)
-            .style(Style::default().add_modifier(Modifier::BOLD));
-        frame.render_widget(inputis, area);
+        let input_area = popup_area(frame.area(), 80, 50);
+        frame.render_widget(input, input_area);
+
+        #[allow(clippy::cast_possible_truncation)]
+        frame.set_cursor_position(Position::new(
+            input_area.x + app_state.input_state.character_index as u16 + 1,
+            input_area.y + 1,
+        ));
     }
 
     fn popup_area(area: Rect, percent_x: u16, percent_y: u16) -> Rect {
@@ -299,4 +329,49 @@ fn render(frame: &mut Frame, app_state: &AppState) {
         let [area] = horizontal.areas(area);
         area
     }
+}
+
+pub fn move_cursor_left(state: &mut InputHandler) {
+    let cursor_moved_left = state.character_index.saturating_sub(1);
+    state.character_index = clamp_cursor(state, cursor_moved_left);
+}
+
+pub fn move_cursor_right(state: &mut InputHandler) {
+    let cursor_moved_right = state.character_index.saturating_add(1);
+    state.character_index = clamp_cursor(state, cursor_moved_right);
+}
+
+pub fn enter_char(state: &mut InputHandler, new_char: char) {
+    let index = byte_index(state);
+    state.input.insert(index, new_char);
+    move_cursor_right(state);
+}
+
+pub fn delete_char(state: &mut InputHandler) {
+    if state.character_index > 0 {
+        let current_index = state.character_index;
+        let before = state.input.chars().take(current_index - 1);
+        let after = state.input.chars().skip(current_index);
+        state.input = before.chain(after).collect();
+        move_cursor_left(state);
+    }
+}
+
+pub fn submit_message(state: &mut InputHandler) {
+    state.messages.push(state.input.clone());
+    state.input.clear();
+    state.character_index = 0;
+}
+
+fn byte_index(state: &InputHandler) -> usize {
+    state
+        .input
+        .char_indices()
+        .map(|(i, _)| i)
+        .nth(state.character_index)
+        .unwrap_or(state.input.len())
+}
+
+fn clamp_cursor(state: &InputHandler, new_pos: usize) -> usize {
+    new_pos.clamp(0, state.input.chars().count())
 }
