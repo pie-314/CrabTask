@@ -18,9 +18,10 @@ pub struct InputHandler {
 
 #[derive(Deserialize, Serialize, Debug)]
 pub struct Todo {
+    pub id: String,
     pub title: String,
     pub completed: bool,
     pub due_date: String,
-    pub priority: String,
-    pub notes: String,
+    //pub priority: String, //Not using in present version
+    //pub notes: String,    //Not using in present version
 }

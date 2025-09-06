@@ -2,7 +2,7 @@ mod json_parser;
 mod types;
 use chrono;
 use color_eyre::eyre::{Ok, Result};
-use json_parser::json_parser;
+use json_parser::{json_parser, json_writer};
 use ratatui::{
     crossterm::{
         event::{self, Event},
@@ -111,7 +111,10 @@ fn ui(mut terminal: DefaultTerminal, app_state: &mut AppState) -> Result<()> {
                     match key.code {
                         event::KeyCode::Char(c) => enter_char(&mut app_state.input_state, c),
                         event::KeyCode::Backspace => delete_char(&mut app_state.input_state),
-                        event::KeyCode::Enter => submit_message(&mut app_state.input_state),
+                        event::KeyCode::Enter => {
+                            app_state.show_popup = false;
+                            submit_message(app_state);
+                        }
                         event::KeyCode::Left => move_cursor_left(&mut app_state.input_state),
                         event::KeyCode::Right => move_cursor_right(&mut app_state.input_state),
                         event::KeyCode::Esc => app_state.show_popup = false,
@@ -119,7 +122,8 @@ fn ui(mut terminal: DefaultTerminal, app_state: &mut AppState) -> Result<()> {
                     }
                 } else {
                     match key.code {
-                        event::KeyCode::Char('q') | event::KeyCode::Char('Q') => break,
+                        //event::KeyCode::Char('q') | event::KeyCode::Char('Q') => break,
+                        event::KeyCode::Esc => break,
                         event::KeyCode::Down => app_state.next(),
                         event::KeyCode::Up => app_state.previous(),
                         event::KeyCode::Char('a') => app_state.show_popup = !app_state.show_popup,
@@ -295,7 +299,7 @@ fn render(frame: &mut Frame, app_state: &AppState) {
     let help_paragraph = Paragraph::new(help_text)
         .block(Block::default())
         .style(Style::default().add_modifier(Modifier::DIM));
-    // Render your full_bottom block in the bottom area
+    // Render full_bottom block in the bottom area
     frame.render_widget(help_paragraph, full_bottom);
 
     let items: Vec<ListItem> = app_state
@@ -310,9 +314,10 @@ fn render(frame: &mut Frame, app_state: &AppState) {
 
     //Input popup
     let input = Paragraph::new(app_state.input_state.input.as_str())
-        .block(Block::bordered().title("Input"));
+        .block(Block::bordered().title("ADD TASK"));
+
     if app_state.show_popup {
-        let input_area = popup_area(frame.area(), 80, 50);
+        let input_area = popup_area(frame.area(), 50, 10);
         frame.render_widget(input, input_area);
 
         #[allow(clippy::cast_possible_truncation)]
@@ -357,10 +362,25 @@ pub fn delete_char(state: &mut InputHandler) {
     }
 }
 
-pub fn submit_message(state: &mut InputHandler) {
-    state.messages.push(state.input.clone());
-    state.input.clear();
-    state.character_index = 0;
+pub fn submit_message(app_state: &mut AppState) {
+    let input = app_state.input_state.input.clone();
+    if input.trim().is_empty() {
+        return;
+    }
+
+    // ✅ Update UI state immediately
+    app_state.tasks.push(input.clone());
+
+    // ✅ Persist to file
+    let today = chrono::Local::now()
+        .date_naive()
+        .format("%Y-%m-%d")
+        .to_string();
+    json_writer(today, input);
+
+    // ✅ Reset input
+    app_state.input_state.input.clear();
+    app_state.input_state.character_index = 0;
 }
 
 fn byte_index(state: &InputHandler) -> usize {
