@@ -4,7 +4,7 @@ use serde::{Deserialize, Serialize};
 #[derive(Debug)]
 pub struct AppState {
     pub show_popup: bool,
-    pub tasks: Vec<String>,
+    pub tasks: Vec<Todo>,
     pub list_state: ListState,
     pub input_state: InputHandler,
 }

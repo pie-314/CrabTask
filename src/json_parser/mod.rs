@@ -32,7 +32,6 @@ pub fn json_writer(date: String, task: String) {
         .and_then(|data| serde_json::from_str(&data).ok())
         .unwrap_or_default();
 
-    // Add new todo
     todos.push(Todo {
         id: (todos.len() + 1).to_string(),
         title: task.to_string(),
@@ -40,6 +39,24 @@ pub fn json_writer(date: String, task: String) {
         due_date: date.to_string(),
     });
 
-    // Write back to file
     fs::write(path, serde_json::to_string_pretty(&todos).unwrap()).unwrap();
+}
+
+pub fn toggle_task(date: &str, task_title: &str) -> Result<(), Box<dyn std::error::Error>> {
+    let filename = "data/todo_data.json";
+
+    let contents = fs::read_to_string(filename)?;
+    let mut tasks: Vec<Todo> = serde_json::from_str(&contents)?;
+
+    if let Some(task) = tasks
+        .iter_mut()
+        .find(|t| t.due_date == date && t.title == task_title)
+    {
+        task.completed = !task.completed;
+    }
+
+    let updated = serde_json::to_string_pretty(&tasks)?;
+    fs::write(filename, updated)?;
+
+    Ok(())
 }

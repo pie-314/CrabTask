@@ -1,8 +1,10 @@
+// assingining the task to next day
+
 mod json_parser;
 mod types;
 use chrono;
 use color_eyre::eyre::{Ok, Result};
-use json_parser::{json_parser, json_writer};
+use json_parser::{json_parser, json_writer, toggle_task};
 use ratatui::{
     crossterm::{
         event::{self, Event},
@@ -10,13 +12,14 @@ use ratatui::{
     },
     layout::{Constraint, Flex, Layout, Position, Rect},
     style::{Color, Modifier, Style, Stylize},
-    text::{Line, Span, Text},
+    text::{Line, Span},
     widgets::{Block, BorderType, Borders, List, ListItem, ListState, Paragraph, Widget},
     DefaultTerminal, Frame,
 };
-use types::AppState;
+use types::{AppState, Todo};
 
 use chrono::{Datelike, Local, NaiveDate};
+use std::result::Result::Ok as Okkk;
 
 use crate::types::InputHandler;
 
@@ -85,13 +88,11 @@ fn main() -> Result<()> {
         .format("%Y-%m-%d")
         .to_string();
 
-    let result = json_parser(today);
-    let tasks: Vec<String> = result
-        .into_iter()
-        .map(|todo| todo.title.to_string())
-        .collect();
+    let tasks: Vec<Todo> = json_parser(today);
 
+    let tasks: Vec<Todo> = tasks;
     state.tasks = tasks;
+
     state.list_state.select(Some(0)); // start from the first item
 
     let terminal = ratatui::init();
@@ -122,6 +123,7 @@ fn ui(mut terminal: DefaultTerminal, app_state: &mut AppState) -> Result<()> {
                     }
                 } else {
                     match key.code {
+                        event::KeyCode::Char('d') => toggle_task_done(app_state), // mark done
                         //event::KeyCode::Char('q') | event::KeyCode::Char('Q') => break,
                         event::KeyCode::Esc => break,
                         event::KeyCode::Down => app_state.next(),
@@ -301,15 +303,22 @@ fn render(frame: &mut Frame, app_state: &AppState) {
         .style(Style::default().add_modifier(Modifier::DIM));
     // Render full_bottom block in the bottom area
     frame.render_widget(help_paragraph, full_bottom);
-
     let items: Vec<ListItem> = app_state
         .tasks
         .iter()
-        .map(|t| ListItem::new(t.as_str()))
+        .map(|t| {
+            if t.completed {
+                ListItem::new(Span::styled(
+                    &t.title,
+                    Style::default().add_modifier(Modifier::CROSSED_OUT),
+                ))
+            } else {
+                ListItem::new(Span::raw(&t.title))
+            }
+        })
         .collect();
 
     let list = List::new(items).block(tasks_block).highlight_symbol(">> "); // highlight current item
-
     frame.render_stateful_widget(list, left_area, &mut app_state.list_state.clone());
 
     //Input popup
@@ -368,17 +377,19 @@ pub fn submit_message(app_state: &mut AppState) {
         return;
     }
 
-    // ✅ Update UI state immediately
-    app_state.tasks.push(input.clone());
+    app_state.tasks.push(Todo {
+        id: uuid::Uuid::new_v4().to_string(), // or increment counter
+        title: input.clone(),
+        completed: false,
+        due_date: chrono::Local::now().format("%Y-%m-%d").to_string(), // today’s date
+    });
 
-    // ✅ Persist to file
     let today = chrono::Local::now()
         .date_naive()
         .format("%Y-%m-%d")
         .to_string();
     json_writer(today, input);
 
-    // ✅ Reset input
     app_state.input_state.input.clear();
     app_state.input_state.character_index = 0;
 }
@@ -394,4 +405,26 @@ fn byte_index(state: &InputHandler) -> usize {
 
 fn clamp_cursor(state: &InputHandler, new_pos: usize) -> usize {
     new_pos.clamp(0, state.input.chars().count())
+}
+
+pub fn toggle_task_done(app_state: &mut AppState) {
+    if let Some(selected_idx) = app_state.list_state.selected() {
+        // Get the selected task
+        if let Some(task) = app_state.tasks.get(selected_idx) {
+            let date = &task.due_date;
+            let title = &task.title;
+
+            // Call toggle_task to update the file AND in-memory task
+            if let Err(e) = toggle_task(date, title) {
+                eprintln!("Failed to toggle task in file: {}", e);
+                return;
+            }
+
+            // Update in-memory state to match the file
+            if let Some(task_mut) = app_state.tasks.get_mut(selected_idx) {
+                // Set it to the same value that is in the file
+                task_mut.completed = !task_mut.completed; // optional, matches file
+            }
+        }
+    }
 }
