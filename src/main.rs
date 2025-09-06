@@ -2,7 +2,9 @@
 
 mod json_parser;
 mod types;
+use crate::event::KeyEventKind;
 use chrono;
+use chrono::{Datelike, Local, NaiveDate};
 use color_eyre::eyre::{Ok, Result};
 use json_parser::{json_parser, json_writer, toggle_task};
 use ratatui::{
@@ -17,9 +19,6 @@ use ratatui::{
     DefaultTerminal, Frame,
 };
 use types::{AppState, Todo};
-
-use chrono::{Datelike, Local, NaiveDate};
-use std::result::Result::Ok as Okkk;
 
 use crate::types::InputHandler;
 
@@ -108,28 +107,32 @@ fn ui(mut terminal: DefaultTerminal, app_state: &mut AppState) -> Result<()> {
 
         if event::poll(std::time::Duration::from_millis(100))? {
             if let Event::Key(key) = event::read()? {
-                if app_state.show_popup {
-                    match key.code {
-                        event::KeyCode::Char(c) => enter_char(&mut app_state.input_state, c),
-                        event::KeyCode::Backspace => delete_char(&mut app_state.input_state),
-                        event::KeyCode::Enter => {
-                            app_state.show_popup = false;
-                            submit_message(app_state);
+                if key.kind == KeyEventKind::Press {
+                    if app_state.show_popup {
+                        match key.code {
+                            event::KeyCode::Char(c) => enter_char(&mut app_state.input_state, c),
+                            event::KeyCode::Backspace => delete_char(&mut app_state.input_state),
+                            event::KeyCode::Enter => {
+                                app_state.show_popup = false;
+                                submit_message(app_state);
+                            }
+                            event::KeyCode::Left => move_cursor_left(&mut app_state.input_state),
+                            event::KeyCode::Right => move_cursor_right(&mut app_state.input_state),
+                            event::KeyCode::Esc => app_state.show_popup = false,
+                            _ => {}
                         }
-                        event::KeyCode::Left => move_cursor_left(&mut app_state.input_state),
-                        event::KeyCode::Right => move_cursor_right(&mut app_state.input_state),
-                        event::KeyCode::Esc => app_state.show_popup = false,
-                        _ => {}
-                    }
-                } else {
-                    match key.code {
-                        event::KeyCode::Char('d') => toggle_task_done(app_state), // mark done
-                        //event::KeyCode::Char('q') | event::KeyCode::Char('Q') => break,
-                        event::KeyCode::Esc => break,
-                        event::KeyCode::Down => app_state.next(),
-                        event::KeyCode::Up => app_state.previous(),
-                        event::KeyCode::Char('a') => app_state.show_popup = !app_state.show_popup,
-                        _ => {}
+                    } else {
+                        match key.code {
+                            event::KeyCode::Char('d') => toggle_task_done(app_state), // mark done
+                            //event::KeyCode::Char('q') | event::KeyCode::Char('Q') => break,
+                            event::KeyCode::Esc => break,
+                            event::KeyCode::Down => app_state.next(),
+                            event::KeyCode::Up => app_state.previous(),
+                            event::KeyCode::Char('a') => {
+                                app_state.show_popup = !app_state.show_popup
+                            }
+                            _ => {}
+                        }
                     }
                 }
             }
