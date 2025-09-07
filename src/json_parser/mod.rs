@@ -6,7 +6,7 @@ use std::result::Result::Ok as Okk;
 // JSON parsing
 
 pub fn json_parser(date: String) -> Vec<Todo> {
-    let json = std::fs::read_to_string("data/todo_data.json").unwrap();
+    let json = std::fs::read_to_string("data_todo/todo_data.json").unwrap();
     let todos = from_str::<Vec<Todo>>(&json);
 
     match todos {
@@ -25,7 +25,7 @@ pub fn json_parser(date: String) -> Vec<Todo> {
 }
 
 pub fn json_writer(date: String, task: String) {
-    let path = "data/todo_data.json";
+    let path = "data_todo/todo_data.json";
 
     let mut todos: Vec<Todo> = std::fs::read_to_string(path)
         .ok()
@@ -43,7 +43,7 @@ pub fn json_writer(date: String, task: String) {
 }
 
 pub fn toggle_task(date: &str, task_title: &str) -> Result<(), Box<dyn std::error::Error>> {
-    let filename = "data/todo_data.json";
+    let filename = "data_todo/todo_data.json";
 
     let contents = fs::read_to_string(filename)?;
     let mut tasks: Vec<Todo> = serde_json::from_str(&contents)?;

@@ -1,27 +1,27 @@
 // assingining the task to next day
-
+use std::result::Result::Ok as Okk;
 mod json_parser;
 mod types;
 use crate::event::KeyEventKind;
+use crate::types::InputHandler;
 use chrono;
 use chrono::{Datelike, Local, NaiveDate};
 use color_eyre::eyre::{Ok, Result};
 use json_parser::{json_parser, json_writer, toggle_task};
+use ratatui::prelude::Constraint;
+use ratatui::style::palette::tailwind;
 use ratatui::{
     crossterm::{
         event::{self, Event},
         terminal::enable_raw_mode,
     },
-    layout::{Constraint, Flex, Layout, Position, Rect},
+    layout::{Alignment, Flex, Layout, Position, Rect},
     style::{Color, Modifier, Style, Stylize},
     text::{Line, Span},
-    widgets::{Block, BorderType, Borders, List, ListItem, ListState, Paragraph, Widget},
+    widgets::{Block, BorderType, Borders, Gauge, List, ListItem, ListState, Paragraph, Widget},
     DefaultTerminal, Frame,
 };
 use types::{AppState, Todo};
-
-use crate::types::InputHandler;
-
 impl Default for AppState {
     fn default() -> Self {
         Self {
@@ -102,8 +102,10 @@ fn main() -> Result<()> {
 
 // Loading UI
 fn ui(mut terminal: DefaultTerminal, app_state: &mut AppState) -> Result<()> {
+    let mut progress = 0;
     loop {
-        terminal.draw(|f| render(f, app_state))?;
+        progress = update_progress(app_state);
+        terminal.draw(|f| render(f, app_state, progress))?;
 
         if event::poll(std::time::Duration::from_millis(100))? {
             if let Event::Key(key) = event::read()? {
@@ -229,7 +231,7 @@ fn month_name(month: u32) -> &'static str {
 }
 
 // Rendering the UI
-fn render(frame: &mut Frame, app_state: &AppState) {
+fn render(frame: &mut Frame, app_state: &AppState, progress: u32) {
     let [border_area] = Layout::vertical([Constraint::Fill(1)])
         .margin(1)
         .areas(frame.area());
@@ -259,13 +261,16 @@ fn render(frame: &mut Frame, app_state: &AppState) {
     .margin(0)
     .areas(right_area);
 
-    //stats progress bar
-    let status = Line::from("PROGRESS".bold().italic());
-    Block::bordered()
-        .title(status)
-        .border_type(BorderType::Rounded)
-        .render(right_top, frame.buffer_mut());
+    let gauge = Gauge::default()
+        .block(
+            Block::bordered()
+                .title("Progress")
+                .border_type(BorderType::Rounded),
+        )
+        .gauge_style(tailwind::RED.c800)
+        .percent(progress as u16);
 
+    frame.render_widget(gauge, right_top);
     let calendar_lines = generate_calendar_lines();
     let calendar_widget = Paragraph::new(calendar_lines).block(
         Block::default()
@@ -288,7 +293,7 @@ fn render(frame: &mut Frame, app_state: &AppState) {
         .border_type(BorderType::Rounded);
 
     let help_text = vec![Line::from(vec![
-        Span::raw("Q/q"),
+        Span::raw("Esc"),
         Span::styled(" : quit", Style::default().add_modifier(Modifier::BOLD)),
         Span::raw(" | "),
         Span::raw("Arrow Up/Down : "),
@@ -297,13 +302,18 @@ fn render(frame: &mut Frame, app_state: &AppState) {
             Style::default().add_modifier(Modifier::BOLD),
         ),
         Span::raw(" | "),
-        Span::raw("Esc "),
-        Span::styled("Exit", Style::default().add_modifier(Modifier::BOLD)),
+        Span::raw(" a : "),
+        Span::styled(
+            "Add new task",
+            Style::default().add_modifier(Modifier::BOLD),
+        ),
     ])];
 
     let help_paragraph = Paragraph::new(help_text)
         .block(Block::default())
-        .style(Style::default().add_modifier(Modifier::DIM));
+        .style(Style::default().add_modifier(Modifier::DIM))
+        .alignment(Alignment::Center);
+
     // Render full_bottom block in the bottom area
     frame.render_widget(help_paragraph, full_bottom);
     let items: Vec<ListItem> = app_state
@@ -410,24 +420,43 @@ fn clamp_cursor(state: &InputHandler, new_pos: usize) -> usize {
     new_pos.clamp(0, state.input.chars().count())
 }
 
-pub fn toggle_task_done(app_state: &mut AppState) {
+fn toggle_task_done(app_state: &mut AppState) {
     if let Some(selected_idx) = app_state.list_state.selected() {
-        // Get the selected task
         if let Some(task) = app_state.tasks.get(selected_idx) {
             let date = &task.due_date;
             let title = &task.title;
 
-            // Call toggle_task to update the file AND in-memory task
             if let Err(e) = toggle_task(date, title) {
                 eprintln!("Failed to toggle task in file: {}", e);
                 return;
             }
 
-            // Update in-memory state to match the file
             if let Some(task_mut) = app_state.tasks.get_mut(selected_idx) {
-                // Set it to the same value that is in the file
-                task_mut.completed = !task_mut.completed; // optional, matches file
+                task_mut.completed = !task_mut.completed;
             }
         }
     }
+}
+
+fn update_progress(app_state: &mut AppState) -> u32 {
+    let today = Local::now().date_naive(); // Getting current date without time
+
+    let tasks_due_today = app_state
+        .tasks
+        .iter()
+        .filter(|task| match task.due_date.parse::<chrono::NaiveDate>() {
+            Okk(due_date) => due_date == today,
+            Err(_) => false,
+        })
+        .count();
+
+    let tasks_completed = app_state.tasks.iter().filter(|task| task.completed).count();
+
+    let total = (tasks_due_today + tasks_completed) as f64;
+    let progress = if total > 0.0 {
+        (tasks_completed as f64 / total) * 200.0
+    } else {
+        0.0
+    };
+    progress as u32
 }
