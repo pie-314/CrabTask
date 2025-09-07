@@ -1,0 +1,608 @@
+[
+  {
+    "id": "1",
+    "title": "Buy groceries",
+    "completed": false,
+    "due_date": "2025-09-06"
+  },
+  {
+    "id": "2",
+    "title": "Finish Rust project",
+    "completed": true,
+    "due_date": "2025-09-06"
+  },
+  {
+    "id": "3",
+    "title": "Morning workout",
+    "completed": false,
+    "due_date": "2025-09-06"
+  },
+  {
+    "id": "4",
+    "title": "Read 'Atomic Habits'",
+    "completed": true,
+    "due_date": "2025-09-06"
+  },
+  {
+    "id": "5",
+    "title": "Plan weekend trip",
+    "completed": false,
+    "due_date": "2025-09-06"
+  },
+  {
+    "id": "6",
+    "title": "Prepare meeting agenda",
+    "completed": false,
+    "due_date": "2025-09-06"
+  },
+  {
+    "id": "7",
+    "title": "Call plumber",
+    "completed": true,
+    "due_date": "2025-09-06"
+  },
+  {
+    "id": "8",
+    "title": "Write blog post about Rust",
+    "completed": false,
+    "due_date": "2025-09-06"
+  },
+  {
+    "id": "9",
+    "title": "Evening walk",
+    "completed": true,
+    "due_date": "2025-09-06"
+  },
+  {
+    "id": "10",
+    "title": "Team standup meeting",
+    "completed": false,
+    "due_date": "2025-09-06"
+  },
+  {
+    "id": "11",
+    "title": "Laundry",
+    "completed": false,
+    "due_date": "2025-09-07"
+  },
+  {
+    "id": "12",
+    "title": "Code review for PR#42",
+    "completed": true,
+    "due_date": "2025-09-07"
+  },
+  {
+    "id": "13",
+    "title": "Attend webinar on AI tools",
+    "completed": false,
+    "due_date": "2025-09-07"
+  },
+  {
+    "id": "14",
+    "title": "Meal prep for week",
+    "completed": false,
+    "due_date": "2025-09-07"
+  },
+  {
+    "id": "15",
+    "title": "Organize desk",
+    "completed": true,
+    "due_date": "2025-09-07"
+  },
+  {
+    "id": "16",
+    "title": "Send invoices",
+    "completed": false,
+    "due_date": "2025-09-07"
+  },
+  {
+    "id": "17",
+    "title": "Pay electricity bill",
+    "completed": true,
+    "due_date": "2025-09-07"
+  },
+  {
+    "id": "18",
+    "title": "Clean kitchen",
+    "completed": false,
+    "due_date": "2025-09-07"
+  },
+  {
+    "id": "19",
+    "title": "Backup laptop",
+    "completed": false,
+    "due_date": "2025-09-07"
+  },
+  {
+    "id": "20",
+    "title": "Grocery restock",
+    "completed": true,
+    "due_date": "2025-09-07"
+  },
+  {
+    "id": "21",
+    "title": "Fix broken chair",
+    "completed": false,
+    "due_date": "2025-09-08"
+  },
+  {
+    "id": "22",
+    "title": "Call parents",
+    "completed": true,
+    "due_date": "2025-09-08"
+  },
+  {
+    "id": "23",
+    "title": "Submit assignment",
+    "completed": false,
+    "due_date": "2025-09-08"
+  },
+  {
+    "id": "24",
+    "title": "Buy birthday gift",
+    "completed": true,
+    "due_date": "2025-09-08"
+  },
+  {
+    "id": "25",
+    "title": "Go for a jog",
+    "completed": false,
+    "due_date": "2025-09-08"
+  },
+  {
+    "id": "26",
+    "title": "Check emails",
+    "completed": false,
+    "due_date": "2025-09-08"
+  },
+  {
+    "id": "27",
+    "title": "Refactor project code",
+    "completed": true,
+    "due_date": "2025-09-08"
+  },
+  {
+    "id": "28",
+    "title": "Meditation session",
+    "completed": false,
+    "due_date": "2025-09-08"
+  },
+  {
+    "id": "29",
+    "title": "Wash car",
+    "completed": true,
+    "due_date": "2025-09-08"
+  },
+  {
+    "id": "30",
+    "title": "Check bank statement",
+    "completed": false,
+    "due_date": "2025-09-08"
+  },
+  {
+    "id": "31",
+    "title": "Team presentation prep",
+    "completed": false,
+    "due_date": "2025-09-09"
+  },
+  {
+    "id": "32",
+    "title": "Morning yoga",
+    "completed": true,
+    "due_date": "2025-09-09"
+  },
+  {
+    "id": "33",
+    "title": "Pick up dry cleaning",
+    "completed": false,
+    "due_date": "2025-09-09"
+  },
+  {
+    "id": "34",
+    "title": "Plan study schedule",
+    "completed": false,
+    "due_date": "2025-09-09"
+  },
+  {
+    "id": "35",
+    "title": "Write journal entry",
+    "completed": true,
+    "due_date": "2025-09-09"
+  },
+  {
+    "id": "36",
+    "title": "Cook dinner",
+    "completed": false,
+    "due_date": "2025-09-09"
+  },
+  {
+    "id": "37",
+    "title": "Prepare slides",
+    "completed": false,
+    "due_date": "2025-09-09"
+  },
+  {
+    "id": "38",
+    "title": "Watch documentary",
+    "completed": true,
+    "due_date": "2025-09-09"
+  },
+  {
+    "id": "39",
+    "title": "Garden watering",
+    "completed": false,
+    "due_date": "2025-09-09"
+  },
+  {
+    "id": "40",
+    "title": "Clean fridge",
+    "completed": true,
+    "due_date": "2025-09-09"
+  },
+  {
+    "id": "41",
+    "title": "Morning run",
+    "completed": false,
+    "due_date": "2025-09-10"
+  },
+  {
+    "id": "42",
+    "title": "Check flight tickets",
+    "completed": true,
+    "due_date": "2025-09-10"
+  },
+  {
+    "id": "43",
+    "title": "Weekly grocery shopping",
+    "completed": false,
+    "due_date": "2025-09-10"
+  },
+  {
+    "id": "44",
+    "title": "Practice coding problems",
+    "completed": true,
+    "due_date": "2025-09-10"
+  },
+  {
+    "id": "45",
+    "title": "Dinner with family",
+    "completed": false,
+    "due_date": "2025-09-10"
+  },
+  {
+    "id": "46",
+    "title": "Organize bookshelf",
+    "completed": false,
+    "due_date": "2025-09-10"
+  },
+  {
+    "id": "47",
+    "title": "Review lecture notes",
+    "completed": true,
+    "due_date": "2025-09-10"
+  },
+  {
+    "id": "48",
+    "title": "Repair bike tire",
+    "completed": false,
+    "due_date": "2025-09-10"
+  },
+  {
+    "id": "49",
+    "title": "Update resume",
+    "completed": false,
+    "due_date": "2025-09-10"
+  },
+  {
+    "id": "50",
+    "title": "Call dentist",
+    "completed": true,
+    "due_date": "2025-09-10"
+  },
+  {
+    "id": "51",
+    "title": "Weekly review",
+    "completed": false,
+    "due_date": "2025-09-11"
+  },
+  {
+    "id": "52",
+    "title": "Pay credit card bill",
+    "completed": true,
+    "due_date": "2025-09-11"
+  },
+  {
+    "id": "53",
+    "title": "Practice guitar",
+    "completed": false,
+    "due_date": "2025-09-11"
+  },
+  {
+    "id": "54",
+    "title": "Prepare for interview",
+    "completed": true,
+    "due_date": "2025-09-11"
+  },
+  {
+    "id": "55",
+    "title": "Clean bathroom",
+    "completed": false,
+    "due_date": "2025-09-11"
+  },
+  {
+    "id": "56",
+    "title": "Write essay draft",
+    "completed": false,
+    "due_date": "2025-09-11"
+  },
+  {
+    "id": "57",
+    "title": "Check car service",
+    "completed": true,
+    "due_date": "2025-09-11"
+  },
+  {
+    "id": "58",
+    "title": "Grocery shopping list",
+    "completed": false,
+    "due_date": "2025-09-11"
+  },
+  {
+    "id": "59",
+    "title": "Work on side project",
+    "completed": true,
+    "due_date": "2025-09-11"
+  },
+  {
+    "id": "60",
+    "title": "Clean windows",
+    "completed": false,
+    "due_date": "2025-09-11"
+  },
+  {
+    "id": "61",
+    "title": "Morning meditation",
+    "completed": false,
+    "due_date": "2025-09-12"
+  },
+  {
+    "id": "62",
+    "title": "Reply to emails",
+    "completed": true,
+    "due_date": "2025-09-12"
+  },
+  {
+    "id": "63",
+    "title": "Call friend",
+    "completed": false,
+    "due_date": "2025-09-12"
+  },
+  {
+    "id": "64",
+    "title": "Review code",
+    "completed": true,
+    "due_date": "2025-09-12"
+  },
+  {
+    "id": "65",
+    "title": "Order books online",
+    "completed": false,
+    "due_date": "2025-09-12"
+  },
+  {
+    "id": "66",
+    "title": "Plan next week",
+    "completed": false,
+    "due_date": "2025-09-12"
+  },
+  {
+    "id": "67",
+    "title": "Prepare lunch",
+    "completed": true,
+    "due_date": "2025-09-12"
+  },
+  {
+    "id": "68",
+    "title": "Water indoor plants",
+    "completed": false,
+    "due_date": "2025-09-12"
+  },
+  {
+    "id": "69",
+    "title": "Test project build",
+    "completed": true,
+    "due_date": "2025-09-12"
+  },
+  {
+    "id": "70",
+    "title": "Evening walk",
+    "completed": false,
+    "due_date": "2025-09-12"
+  },
+  {
+    "id": "71",
+    "title": "Cook pasta",
+    "completed": false,
+    "due_date": "2025-09-06"
+  },
+  {
+    "id": "72",
+    "title": "Backup phone photos",
+    "completed": true,
+    "due_date": "2025-09-07"
+  },
+  {
+    "id": "73",
+    "title": "Check GitHub issues",
+    "completed": false,
+    "due_date": "2025-09-08"
+  },
+  {
+    "id": "74",
+    "title": "Watch tutorial on Rust",
+    "completed": false,
+    "due_date": "2025-09-09"
+  },
+  {
+    "id": "75",
+    "title": "Grocery run",
+    "completed": true,
+    "due_date": "2025-09-10"
+  },
+  {
+    "id": "76",
+    "title": "Morning jog",
+    "completed": false,
+    "due_date": "2025-09-11"
+  },
+  {
+    "id": "77",
+    "title": "Organize wardrobe",
+    "completed": true,
+    "due_date": "2025-09-12"
+  },
+  {
+    "id": "78",
+    "title": "Practice math problems",
+    "completed": false,
+    "due_date": "2025-09-06"
+  },
+  {
+    "id": "79",
+    "title": "Check weather forecast",
+    "completed": true,
+    "due_date": "2025-09-07"
+  },
+  {
+    "id": "80",
+    "title": "Study physics chapter",
+    "completed": false,
+    "due_date": "2025-09-08"
+  },
+  {
+    "id": "81",
+    "title": "Buy coffee beans",
+    "completed": true,
+    "due_date": "2025-09-09"
+  },
+  {
+    "id": "82",
+    "title": "Fix bedroom light",
+    "completed": false,
+    "due_date": "2025-09-10"
+  },
+  {
+    "id": "83",
+    "title": "Prepare speech",
+    "completed": true,
+    "due_date": "2025-09-11"
+  },
+  {
+    "id": "84",
+    "title": "Check train tickets",
+    "completed": false,
+    "due_date": "2025-09-12"
+  },
+  {
+    "id": "85",
+    "title": "Order groceries online",
+    "completed": true,
+    "due_date": "2025-09-06"
+  },
+  {
+    "id": "86",
+    "title": "Practice piano",
+    "completed": false,
+    "due_date": "2025-09-07"
+  },
+  {
+    "id": "87",
+    "title": "Organize study table",
+    "completed": true,
+    "due_date": "2025-09-08"
+  },
+  {
+    "id": "88",
+    "title": "Watch coding livestream",
+    "completed": false,
+    "due_date": "2025-09-09"
+  },
+  {
+    "id": "89",
+    "title": "Clean garage",
+    "completed": true,
+    "due_date": "2025-09-10"
+  },
+  {
+    "id": "90",
+    "title": "Weekly call with mentor",
+    "completed": false,
+    "due_date": "2025-09-11"
+  },
+  {
+    "id": "91",
+    "title": "Write blog draft",
+    "completed": false,
+    "due_date": "2025-09-12"
+  },
+  {
+    "id": "92",
+    "title": "Practice meditation",
+    "completed": true,
+    "due_date": "2025-09-06"
+  },
+  {
+    "id": "93",
+    "title": "Plan study timetable",
+    "completed": false,
+    "due_date": "2025-09-07"
+  },
+  {
+    "id": "94",
+    "title": "Buy snacks",
+    "completed": true,
+    "due_date": "2025-09-08"
+  },
+  {
+    "id": "95",
+    "title": "Organize files",
+    "completed": false,
+    "due_date": "2025-09-09"
+  },
+  {
+    "id": "96",
+    "title": "Prepare project demo",
+    "completed": true,
+    "due_date": "2025-09-10"
+  },
+  {
+    "id": "97",
+    "title": "Do laundry",
+    "completed": false,
+    "due_date": "2025-09-11"
+  },
+  {
+    "id": "98",
+    "title": "Read newspaper",
+    "completed": true,
+    "due_date": "2025-09-12"
+  },
+  {
+    "id": "99",
+    "title": "Check system updates",
+    "completed": false,
+    "due_date": "2025-09-06"
+  },
+  {
+    "id": "100",
+    "title": "Write gratitude journal",
+    "completed": true,
+    "due_date": "2025-09-07"
+  },
+  {
+    "id": "101",
+    "title": "eat food",
+    "completed": false,
+    "due_date": "2025-09-06"
+  }
+]
