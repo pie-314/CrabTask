@@ -1,117 +1,80 @@
 # CrabTask
 
-**CrabTask** is a modern, terminal-based task management application written in Rust. It leverages a TUI (Terminal User Interface) to provide a robust, interactive, and visually appealing way to manage your daily to-dos, with features such as calendar navigation, task highlighting, and progress tracking—all from your terminal.
-
----
+CrabTask is a lightweight, efficient task management application built with Rust. Designed for developers and productivity enthusiasts, CrabTask provides a streamlined way to organize, track, and manage your daily tasks directly from your terminal.
 
 ## Features
 
-- **Task Management**: Add, list, and manage your daily tasks, organized by date.
-- **Interactive TUI**: Built with [ratatui](https://github.com/ratatui-org/ratatui), offering a smooth and keyboard-navigable interface.
-- **Calendar Integration**: See your current month's calendar, with today highlighted.
-- **Persistent Storage**: All tasks are stored in a local JSON file (`data/todo_data.json`), ensuring your data persists across sessions.
-- **Task Details**: Each task can have a title, due date, priority, notes, and completion status.
-- **Keyboard Controls**: Navigate tasks, mark them complete, add new tasks, and more using simple key bindings.
+- **Fast & Reliable**: Built with Rust for speed and safety.
+- **Intuitive CLI**: Simple command-line interface for quick task management.
+- **Task Prioritization**: Easily set priorities and deadlines.
+- **Persistence**: Your tasks are saved and loaded automatically.
+- **Cross-platform**: Works on Linux, macOS, and Windows.
 
----
-
-## Quick Start
+## Installation
 
 ### Prerequisites
 
-- [Rust](https://www.rust-lang.org/tools/install) (edition 2021 or later)
-- A terminal emulator that supports UTF-8 and ANSI colors
+- [Rust](https://www.rust-lang.org/tools/install) (version 1.60 or newer)
 
-### Installation
+### Build from Source
 
-1. **Clone the repository**
-   ```sh
-   git clone https://github.com/pie-314/CrabTask.git
-   cd CrabTask
-   ```
+```sh
+git clone https://github.com/pie-314/CrabTask.git
+cd CrabTask
+cargo build --release
+```
 
-2. **Build the project**
-   ```sh
-   cargo build --release
-   ```
-
-3. **Run the application**
-   ```sh
-   cargo run
-   ```
-
-   On first run, a `data/todo_data.json` file will be created if it does not exist.
-
----
+The compiled binary will be available in `target/release/crabtask`.
 
 ## Usage
 
-Once running, CrabTask presents a TUI with your daily tasks and a calendar view.
+Run CrabTask from your terminal:
 
-### Key Bindings
-
-| Key         | Action                         |
-|-------------|-------------------------------|
-| Up/Down     | Navigate tasks                 |
-| `a`         | Add a new task (TUI/legacy)   |
-| `d`         | Delete selected task           |
-| `m`         | Mark task as complete          |
-| `q` or `Q`  | Quit application              |
-
-> *Note: Some keyboard shortcuts may be available only in the legacy interface.*
-
-### Task Data Format
-
-Tasks are stored in a JSON file, each as a `Todo` object:
-```json
-{
-  "id": "uuid",
-  "title": "Buy groceries",
-  "completed": false,
-  "due_date": "2025-08-20",
-  "priority": "high",
-  "notes": "Buy milk, eggs, bread"
-}
+```sh
+./crabtask [OPTIONS] [SUBCOMMAND]
 ```
 
----
+### Common Commands
 
-## Project Structure
+- `add "Task description"`: Add a new task
+- `list`: Show all tasks
+- `done <task_id>`: Mark a task as completed
+- `delete <task_id>`: Remove a task
+- `edit <task_id> "New description"`: Edit a task's description
 
-- `src/main.rs`  
-  The main entrypoint with the TUI interface, event loop, and rendering logic.
-- `src/types/mod.rs`  
-  Defines core types like `AppState` and `Todo`.
-- `src/json_parser/mod.rs`  
-  Functions for loading and parsing task data from JSON.
-- `src/main_old.rs`  
-  (Legacy) Early implementation with basic CLI logic. Kept for reference.
-- `data/todo_data.json`  
-  Local persistent storage for tasks.
+For the full list of commands and options:
 
----
+```sh
+./crabtask --help
+```
 
+## Example
+
+```sh
+./crabtask add "Write documentation"
+./crabtask list
+./crabtask done 2
+```
 
 ## Contributing
 
-Pull requests and issues are welcome! If you have suggestions for additional features, improvements, or bug reports, please open an issue or PR.
+Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) guide before submitting any changes.
 
----
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -am 'Add new feature'`)
+4. Push to the branch (`git push origin feature/your-feature`)
+5. Open a Pull Request
 
 ## License
 
-This project is licensed under the MIT License.
-
----
+CrabTask is released under the [MIT License](LICENSE).
 
 ## Acknowledgements
 
-- Inspired by classic CLI productivity tools and the Rust community.
-- Thanks to [ratatui](https://github.com/ratatui-org/ratatui) for the excellent TUI library.
+- Inspired by the Rust community and CLI productivity tools.
+- Thanks to all contributors and users for their feedback and support.
 
 ---
 
-**Happy tasking! 🦀**
-
-**NOTE: MANY FEATURES ARE NOT YET IMPLEMENTED AND I AM WORKING ON IT.**
-**NOTE: BUILD MIGHT NOT WORK, RUN IN DEBUG FOR NOW.**
+**CrabTask**: Organize your day, the Rusty way!
