@@ -1,20 +1,65 @@
 # CrabTask
 
-CrabTask is a lightweight, efficient task management application built with Rust. Designed for developers and productivity enthusiasts, CrabTask provides a streamlined way to organize, track, and manage your daily tasks directly from your terminal.
+CrabTask is a TUI (Text User Interface) based Todo App written in Rust. It helps you organize daily tasks efficiently and interactively right from your terminal, with a focus on speed, usability, and modern Rust tooling.
 
-## Features
+---
 
-- **Fast & Reliable**: Built with Rust for speed and safety.
-- **Intuitive CLI**: Simple command-line interface for quick task management.
-- **Task Prioritization**: Easily set priorities and deadlines.
-- **Persistence**: Your tasks are saved and loaded automatically.
-- **Cross-platform**: Works on Linux, macOS, and Windows.
+## 🦀 Features
 
-## Installation
+- **Interactive TUI**: Manage tasks in a responsive and visually appealing terminal UI.
+- **Keyboard Controls**: Quickly add, edit, mark done, and delete tasks with intuitive keyboard shortcuts.
+- **Persistent Storage**: Your tasks are saved and loaded automatically for each day.
+- **Calendar View**: Navigate tasks by date with an integrated calendar.
+- **Progress Indicator**: Visual gauge showing completion progress.
+- **Cross-platform**: Runs on Linux, macOS, and Windows.
+- **Open Source**: MIT licensed and open for community contributions.
+
+---
+
+## 🛠️ Dependencies
+
+CrabTask leverages modern, battle-tested Rust libraries, including:
+
+### Core Libraries
+
+- **[ratatui](https://crates.io/crates/ratatui):**  
+  A high-performance library for building rich TUIs (Text User Interfaces) in Rust.  
+  Used for layout, widgets, styling, and rendering the interactive interface.
+
+- **[crossterm](https://crates.io/crates/crossterm):**  
+  Enables cross-platform terminal manipulation, handling raw mode, input events, and drawing.
+
+- **[chrono](https://crates.io/crates/chrono):**  
+  For robust date and time handling, especially for calendar and daily task features.
+
+- **[serde_json](https://crates.io/crates/serde_json):**  
+  For serializing and deserializing tasks to JSON, enabling persistent storage.
+
+- **[color-eyre](https://crates.io/crates/color-eyre):**  
+  For colorful, easy-to-read error reporting in the terminal.
+
+### Example Code Usage (from CrabTask)
+
+```rust
+use ratatui::{
+    widgets::{Block, Borders, Gauge, List, Paragraph},
+    style::{Color, Stylize},
+    layout::{Layout, Constraint},
+    text::{Line, Span},
+    DefaultTerminal, Frame,
+};
+use crossterm::event::{self, Event, KeyCode};
+use chrono::Local;
+use serde_json;
+```
+
+---
+
+## 📦 Installation
 
 ### Prerequisites
 
-- [Rust](https://www.rust-lang.org/tools/install) (version 1.60 or newer)
+- [Rust](https://www.rust-lang.org/tools/install) (v1.60 or newer)
 
 ### Build from Source
 
@@ -24,57 +69,52 @@ cd CrabTask
 cargo build --release
 ```
 
-The compiled binary will be available in `target/release/crabtask`.
+The binary will be available at `target/release/crabtask`.
 
-## Usage
+---
+
+## 🚀 Usage
 
 Run CrabTask from your terminal:
 
 ```sh
-./crabtask [OPTIONS] [SUBCOMMAND]
+./crabtask
 ```
 
-### Common Commands
+### Keyboard Shortcuts
 
-- `add "Task description"`: Add a new task
-- `list`: Show all tasks
-- `done <task_id>`: Mark a task as completed
-- `delete <task_id>`: Remove a task
-- `edit <task_id> "New description"`: Edit a task's description
+- `a` – Add a new task
+- `d` – Mark selected task as done
+- `r` – Remove selected task
+- `↑ / ↓` – Move selection up/down
+- `Esc` – Quit application
 
-For the full list of commands and options:
+For more options and help:
 
 ```sh
 ./crabtask --help
 ```
 
-## Example
+---
 
-```sh
-./crabtask add "Write documentation"
-./crabtask list
-./crabtask done 2
-```
+## 📝 Contributing
 
-## Contributing
-
-Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) guide before submitting any changes.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/your-feature`)
-3. Commit your changes (`git commit -am 'Add new feature'`)
-4. Push to the branch (`git push origin feature/your-feature`)
-5. Open a Pull Request
-
-## License
-
-CrabTask is released under the [MIT License](LICENSE).
-
-## Acknowledgements
-
-- Inspired by the Rust community and CLI productivity tools.
-- Thanks to all contributors and users for their feedback and support.
+Contributions are welcome!  
+Please read our [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) before submitting pull requests or issues.
 
 ---
 
-**CrabTask**: Organize your day, the Rusty way!
+## 📄 License
+
+Distributed under the [MIT License](LICENSE).
+
+---
+
+## 🙏 Acknowledgements
+
+- Built with [ratatui](https://github.com/tui-rs/ratatui), [crossterm](https://github.com/crossterm-rs/crossterm), and the awesome Rust ecosystem.
+- Thanks to all contributors and users for your feedback and support!
+
+---
+
+> **CrabTask:** Organize your day, the Rusty way!
