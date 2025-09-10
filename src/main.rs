@@ -6,10 +6,11 @@ use crate::event::KeyEventKind;
 use crate::types::InputHandler;
 use chrono;
 use chrono::{Datelike, Local, NaiveDate};
-use color_eyre::eyre::{Ok, Result};
-use json_parser::{json_parser, json_writer, toggle_task};
+use color_eyre::eyre::{Error, Ok, Result};
+use json_parser::{delete_task, json_parser, json_writer, toggle_task};
 use ratatui::prelude::Constraint;
 use ratatui::style::palette::tailwind;
+use ratatui::widgets::block::title;
 use ratatui::{
     crossterm::{
         event::{self, Event},
@@ -126,6 +127,7 @@ fn ui(mut terminal: DefaultTerminal, app_state: &mut AppState) -> Result<()> {
                     } else {
                         match key.code {
                             event::KeyCode::Char('d') => toggle_task_done(app_state), // mark done
+                            event::KeyCode::Char('r') => remove_task(app_state),      // mark done
                             //event::KeyCode::Char('q') | event::KeyCode::Char('Q') => break,
                             event::KeyCode::Esc => break,
                             event::KeyCode::Down => app_state.next(),
@@ -267,10 +269,11 @@ fn render(frame: &mut Frame, app_state: &AppState, progress: u32) {
                 .title("Progress")
                 .border_type(BorderType::Rounded),
         )
-        .gauge_style(tailwind::RED.c800)
+        .gauge_style(tailwind::AMBER.c800)
         .percent(progress as u16);
 
     frame.render_widget(gauge, right_top);
+
     let calendar_lines = generate_calendar_lines();
     let calendar_widget = Paragraph::new(calendar_lines).block(
         Block::default()
@@ -438,25 +441,39 @@ fn toggle_task_done(app_state: &mut AppState) {
     }
 }
 
+fn remove_task(app_state: &mut AppState) {
+    if let Some(selected_idx) = app_state.list_state.selected() {
+        if let Some(task) = app_state.tasks.get(selected_idx) {
+            let id = &task.id;
+
+            if let Err(e) = delete_task(id) {
+                eprintln!("Failed to delete task {}", e);
+                return;
+            }
+        }
+        app_state.tasks.remove(selected_idx);
+    }
+}
+
 fn update_progress(app_state: &mut AppState) -> u32 {
     let today = Local::now().date_naive(); // Getting current date without time
 
-    let tasks_due_today = app_state
+    let total = app_state
         .tasks
         .iter()
         .filter(|task| match task.due_date.parse::<chrono::NaiveDate>() {
             Okk(due_date) => due_date == today,
             Err(_) => false,
         })
-        .count();
+        .count() as f64;
 
     let tasks_completed = app_state.tasks.iter().filter(|task| task.completed).count();
 
-    let total = (tasks_due_today + tasks_completed) as f64;
     let progress = if total > 0.0 {
-        (tasks_completed as f64 / total) * 200.0
+        (tasks_completed as f64 / total) * 100.0
     } else {
         0.0
     };
+
     progress as u32
 }

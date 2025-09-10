@@ -1,4 +1,5 @@
 use crate::types::Todo;
+use color_eyre::eyre::Result;
 use serde_json::from_str;
 use std::fs;
 use std::result::Result::Err;
@@ -57,6 +58,24 @@ pub fn toggle_task(date: &str, task_title: &str) -> Result<(), Box<dyn std::erro
 
     let updated = serde_json::to_string_pretty(&tasks)?;
     fs::write(filename, updated)?;
+
+    Ok(())
+}
+
+pub fn delete_task(id: &str) -> Result<(), Box<dyn std::error::Error>> {
+    let filename = "data_todo/todo_data.json";
+
+    // 1. Read JSON file
+    let contents = fs::read_to_string(filename)?;
+
+    // 2. Parse JSON into Vec<Todo>
+    let mut tasks: Vec<Todo> = serde_json::from_str(&contents)?;
+
+    // 3. Retain everything except the matching id
+    tasks.retain(|task| task.id != id);
+
+    // 4. Write updated list back to file
+    fs::write(filename, serde_json::to_string_pretty(&tasks)?)?;
 
     Ok(())
 }
