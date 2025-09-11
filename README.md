@@ -1,6 +1,6 @@
 # CrabTask
 
-CrabTask is a TUI (Text User Interface) based Todo App written in Rust. It helps you organize daily tasks efficiently and interactively right from your terminal, with a focus on speed, usability, and modern Rust tooling.
+CrabTask is a TUI (Terminal User Interface) based Todo App written in Rust. It helps you organize daily tasks efficiently and interactively right from your terminal, with a focus on speed, usability, and modern Rust tooling.
 
 ---
 
@@ -118,3 +118,4 @@ Distributed under the [MIT License](LICENSE).
 ---
 
 > **CrabTask:** Organize your day, the Rusty way!
+
