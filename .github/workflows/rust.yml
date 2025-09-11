@@ -20,14 +20,17 @@ jobs:
     - name: Install Rust (stable)
       uses: dtolnay/rust-toolchain@stable
 
-    - name: Build (release)
-      run: cargo build --release --verbose
+    - name: Set up Intel target for Apple Silicon
+      run: rustup target add x86_64-apple-darwin
 
-    - name: Run tests
-      run: cargo test --release --verbose
+    - name: Build (release) for Intel macOS
+      run: cargo build --release --target x86_64-apple-darwin --verbose
 
-    - name: Upload macOS binary
+    - name: Run tests for Intel macOS
+      run: cargo test --release --target x86_64-apple-darwin --verbose
+
+    - name: Upload macOS Intel binary
       uses: actions/upload-artifact@v4
       with:
-        name: CrabTask-macos
-        path: target/release/CrabTask
+        name: CrabTask-macos-x86_64
+        path: target/x86_64-apple-darwin/release/CrabTask
