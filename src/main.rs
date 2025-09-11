@@ -310,6 +310,9 @@ fn render(frame: &mut Frame, app_state: &AppState, progress: u32) {
             "Add new task",
             Style::default().add_modifier(Modifier::BOLD),
         ),
+        Span::raw(" | "),
+        Span::raw(" r : "),
+        Span::styled("Remove task", Style::default().add_modifier(Modifier::BOLD)),
     ])];
 
     let help_paragraph = Paragraph::new(help_text)

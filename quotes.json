@@ -1,0 +1,2002 @@
+[
+  {
+    "id": 1,
+    "quote": "Genius is one percent inspiration and ninety-nine percent perspiration.",
+    "author": "Thomas Edison"
+  },
+  {
+    "id": 2,
+    "quote": "It always seems impossible until it\u2019s done.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "id": 3,
+    "quote": "The important thing is not to stop questioning. Curiosity has its own reason for existing.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 4,
+    "quote": "Hard work beats talent when talent doesn\u2019t work hard.",
+    "author": "Tim Notke"
+  },
+  {
+    "id": 5,
+    "quote": "I have no special talent. I am only passionately curious.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 6,
+    "quote": "Perseverance is not a long race; it is many short races one after the other.",
+    "author": "Walter Elliot"
+  },
+  {
+    "id": 7,
+    "quote": "The best way to predict your future is to create it.",
+    "author": "Abraham Lincoln"
+  },
+  {
+    "id": 8,
+    "quote": "Do not wait to strike till the iron is hot; but make it hot by striking.",
+    "author": "William Butler Yeats"
+  },
+  {
+    "id": 9,
+    "quote": "In the middle of every difficulty lies opportunity.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 10,
+    "quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 11,
+    "quote": "What we know is a drop, what we don't know is an ocean.",
+    "author": "Isaac Newton"
+  },
+  {
+    "id": 12,
+    "quote": "Curiosity is the wick in the candle of learning.",
+    "author": "William Arthur Ward"
+  },
+  {
+    "id": 13,
+    "quote": "Discipline is the bridge between goals and accomplishment.",
+    "author": "Jim Rohn"
+  },
+  {
+    "id": 14,
+    "quote": "The future belongs to those who prepare for it today.",
+    "author": "Malcolm X"
+  },
+  {
+    "id": 15,
+    "quote": "If people knew how hard I worked to get my mastery, it wouldn\u2019t seem so wonderful at all.",
+    "author": "Michelangelo"
+  },
+  {
+    "id": 16,
+    "quote": "A person who never made a mistake never tried anything new.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 17,
+    "quote": "Small deeds done are better than great deeds planned.",
+    "author": "Peter Marshall"
+  },
+  {
+    "id": 18,
+    "quote": "Quality is not an act, it is a habit.",
+    "author": "Aristotle"
+  },
+  {
+    "id": 19,
+    "quote": "Learning never exhausts the mind.",
+    "author": "Leonardo da Vinci"
+  },
+  {
+    "id": 20,
+    "quote": "The way to get started is to quit talking and begin doing.",
+    "author": "Walt Disney"
+  },
+  {
+    "id": 21,
+    "quote": "Courage is not having the strength to go on; it is going on when you don\u2019t have the strength.",
+    "author": "Theodore Roosevelt"
+  },
+  {
+    "id": 22,
+    "quote": "Curiosity will conquer fear even more than bravery will.",
+    "author": "James Stephens"
+  },
+  {
+    "id": 23,
+    "quote": "There are no shortcuts to any place worth going.",
+    "author": "Beverly Sills"
+  },
+  {
+    "id": 24,
+    "quote": "Fall seven times and stand up eight.",
+    "author": "Japanese Proverb"
+  },
+  {
+    "id": 25,
+    "quote": "The only way to achieve the impossible is to believe it is possible.",
+    "author": "Charles Kingsleigh"
+  },
+  {
+    "id": 26,
+    "quote": "The secret of getting ahead is getting started.",
+    "author": "Mark Twain"
+  },
+  {
+    "id": 27,
+    "quote": "Dream big and dare to fail.",
+    "author": "Norman Vaughan"
+  },
+  {
+    "id": 28,
+    "quote": "Don\u2019t watch the clock; do what it does. Keep going.",
+    "author": "Sam Levenson"
+  },
+  {
+    "id": 29,
+    "quote": "Work hard in silence, let your success be your noise.",
+    "author": "Frank Ocean"
+  },
+  {
+    "id": 30,
+    "quote": "Knowledge will bring you the opportunity to make a difference.",
+    "author": "Claire Fagin"
+  },
+  {
+    "id": 31,
+    "quote": "Genius is one percent inspiration and ninety-nine percent perspiration.",
+    "author": "Thomas Edison"
+  },
+  {
+    "id": 32,
+    "quote": "It always seems impossible until it\u2019s done.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "id": 33,
+    "quote": "The important thing is not to stop questioning. Curiosity has its own reason for existing.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 34,
+    "quote": "Hard work beats talent when talent doesn\u2019t work hard.",
+    "author": "Tim Notke"
+  },
+  {
+    "id": 35,
+    "quote": "I have no special talent. I am only passionately curious.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 36,
+    "quote": "Perseverance is not a long race; it is many short races one after the other.",
+    "author": "Walter Elliot"
+  },
+  {
+    "id": 37,
+    "quote": "The best way to predict your future is to create it.",
+    "author": "Abraham Lincoln"
+  },
+  {
+    "id": 38,
+    "quote": "Do not wait to strike till the iron is hot; but make it hot by striking.",
+    "author": "William Butler Yeats"
+  },
+  {
+    "id": 39,
+    "quote": "In the middle of every difficulty lies opportunity.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 40,
+    "quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 41,
+    "quote": "What we know is a drop, what we don't know is an ocean.",
+    "author": "Isaac Newton"
+  },
+  {
+    "id": 42,
+    "quote": "Curiosity is the wick in the candle of learning.",
+    "author": "William Arthur Ward"
+  },
+  {
+    "id": 43,
+    "quote": "Discipline is the bridge between goals and accomplishment.",
+    "author": "Jim Rohn"
+  },
+  {
+    "id": 44,
+    "quote": "The future belongs to those who prepare for it today.",
+    "author": "Malcolm X"
+  },
+  {
+    "id": 45,
+    "quote": "If people knew how hard I worked to get my mastery, it wouldn\u2019t seem so wonderful at all.",
+    "author": "Michelangelo"
+  },
+  {
+    "id": 46,
+    "quote": "A person who never made a mistake never tried anything new.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 47,
+    "quote": "Small deeds done are better than great deeds planned.",
+    "author": "Peter Marshall"
+  },
+  {
+    "id": 48,
+    "quote": "Quality is not an act, it is a habit.",
+    "author": "Aristotle"
+  },
+  {
+    "id": 49,
+    "quote": "Learning never exhausts the mind.",
+    "author": "Leonardo da Vinci"
+  },
+  {
+    "id": 50,
+    "quote": "The way to get started is to quit talking and begin doing.",
+    "author": "Walt Disney"
+  },
+  {
+    "id": 51,
+    "quote": "Courage is not having the strength to go on; it is going on when you don\u2019t have the strength.",
+    "author": "Theodore Roosevelt"
+  },
+  {
+    "id": 52,
+    "quote": "Curiosity will conquer fear even more than bravery will.",
+    "author": "James Stephens"
+  },
+  {
+    "id": 53,
+    "quote": "There are no shortcuts to any place worth going.",
+    "author": "Beverly Sills"
+  },
+  {
+    "id": 54,
+    "quote": "Fall seven times and stand up eight.",
+    "author": "Japanese Proverb"
+  },
+  {
+    "id": 55,
+    "quote": "The only way to achieve the impossible is to believe it is possible.",
+    "author": "Charles Kingsleigh"
+  },
+  {
+    "id": 56,
+    "quote": "The secret of getting ahead is getting started.",
+    "author": "Mark Twain"
+  },
+  {
+    "id": 57,
+    "quote": "Dream big and dare to fail.",
+    "author": "Norman Vaughan"
+  },
+  {
+    "id": 58,
+    "quote": "Don\u2019t watch the clock; do what it does. Keep going.",
+    "author": "Sam Levenson"
+  },
+  {
+    "id": 59,
+    "quote": "Work hard in silence, let your success be your noise.",
+    "author": "Frank Ocean"
+  },
+  {
+    "id": 60,
+    "quote": "Knowledge will bring you the opportunity to make a difference.",
+    "author": "Claire Fagin"
+  },
+  {
+    "id": 61,
+    "quote": "Genius is one percent inspiration and ninety-nine percent perspiration.",
+    "author": "Thomas Edison"
+  },
+  {
+    "id": 62,
+    "quote": "It always seems impossible until it\u2019s done.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "id": 63,
+    "quote": "The important thing is not to stop questioning. Curiosity has its own reason for existing.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 64,
+    "quote": "Hard work beats talent when talent doesn\u2019t work hard.",
+    "author": "Tim Notke"
+  },
+  {
+    "id": 65,
+    "quote": "I have no special talent. I am only passionately curious.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 66,
+    "quote": "Perseverance is not a long race; it is many short races one after the other.",
+    "author": "Walter Elliot"
+  },
+  {
+    "id": 67,
+    "quote": "The best way to predict your future is to create it.",
+    "author": "Abraham Lincoln"
+  },
+  {
+    "id": 68,
+    "quote": "Do not wait to strike till the iron is hot; but make it hot by striking.",
+    "author": "William Butler Yeats"
+  },
+  {
+    "id": 69,
+    "quote": "In the middle of every difficulty lies opportunity.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 70,
+    "quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 71,
+    "quote": "What we know is a drop, what we don't know is an ocean.",
+    "author": "Isaac Newton"
+  },
+  {
+    "id": 72,
+    "quote": "Curiosity is the wick in the candle of learning.",
+    "author": "William Arthur Ward"
+  },
+  {
+    "id": 73,
+    "quote": "Discipline is the bridge between goals and accomplishment.",
+    "author": "Jim Rohn"
+  },
+  {
+    "id": 74,
+    "quote": "The future belongs to those who prepare for it today.",
+    "author": "Malcolm X"
+  },
+  {
+    "id": 75,
+    "quote": "If people knew how hard I worked to get my mastery, it wouldn\u2019t seem so wonderful at all.",
+    "author": "Michelangelo"
+  },
+  {
+    "id": 76,
+    "quote": "A person who never made a mistake never tried anything new.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 77,
+    "quote": "Small deeds done are better than great deeds planned.",
+    "author": "Peter Marshall"
+  },
+  {
+    "id": 78,
+    "quote": "Quality is not an act, it is a habit.",
+    "author": "Aristotle"
+  },
+  {
+    "id": 79,
+    "quote": "Learning never exhausts the mind.",
+    "author": "Leonardo da Vinci"
+  },
+  {
+    "id": 80,
+    "quote": "The way to get started is to quit talking and begin doing.",
+    "author": "Walt Disney"
+  },
+  {
+    "id": 81,
+    "quote": "Courage is not having the strength to go on; it is going on when you don\u2019t have the strength.",
+    "author": "Theodore Roosevelt"
+  },
+  {
+    "id": 82,
+    "quote": "Curiosity will conquer fear even more than bravery will.",
+    "author": "James Stephens"
+  },
+  {
+    "id": 83,
+    "quote": "There are no shortcuts to any place worth going.",
+    "author": "Beverly Sills"
+  },
+  {
+    "id": 84,
+    "quote": "Fall seven times and stand up eight.",
+    "author": "Japanese Proverb"
+  },
+  {
+    "id": 85,
+    "quote": "The only way to achieve the impossible is to believe it is possible.",
+    "author": "Charles Kingsleigh"
+  },
+  {
+    "id": 86,
+    "quote": "The secret of getting ahead is getting started.",
+    "author": "Mark Twain"
+  },
+  {
+    "id": 87,
+    "quote": "Dream big and dare to fail.",
+    "author": "Norman Vaughan"
+  },
+  {
+    "id": 88,
+    "quote": "Don\u2019t watch the clock; do what it does. Keep going.",
+    "author": "Sam Levenson"
+  },
+  {
+    "id": 89,
+    "quote": "Work hard in silence, let your success be your noise.",
+    "author": "Frank Ocean"
+  },
+  {
+    "id": 90,
+    "quote": "Knowledge will bring you the opportunity to make a difference.",
+    "author": "Claire Fagin"
+  },
+  {
+    "id": 91,
+    "quote": "Genius is one percent inspiration and ninety-nine percent perspiration.",
+    "author": "Thomas Edison"
+  },
+  {
+    "id": 92,
+    "quote": "It always seems impossible until it\u2019s done.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "id": 93,
+    "quote": "The important thing is not to stop questioning. Curiosity has its own reason for existing.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 94,
+    "quote": "Hard work beats talent when talent doesn\u2019t work hard.",
+    "author": "Tim Notke"
+  },
+  {
+    "id": 95,
+    "quote": "I have no special talent. I am only passionately curious.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 96,
+    "quote": "Perseverance is not a long race; it is many short races one after the other.",
+    "author": "Walter Elliot"
+  },
+  {
+    "id": 97,
+    "quote": "The best way to predict your future is to create it.",
+    "author": "Abraham Lincoln"
+  },
+  {
+    "id": 98,
+    "quote": "Do not wait to strike till the iron is hot; but make it hot by striking.",
+    "author": "William Butler Yeats"
+  },
+  {
+    "id": 99,
+    "quote": "In the middle of every difficulty lies opportunity.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 100,
+    "quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 101,
+    "quote": "What we know is a drop, what we don't know is an ocean.",
+    "author": "Isaac Newton"
+  },
+  {
+    "id": 102,
+    "quote": "Curiosity is the wick in the candle of learning.",
+    "author": "William Arthur Ward"
+  },
+  {
+    "id": 103,
+    "quote": "Discipline is the bridge between goals and accomplishment.",
+    "author": "Jim Rohn"
+  },
+  {
+    "id": 104,
+    "quote": "The future belongs to those who prepare for it today.",
+    "author": "Malcolm X"
+  },
+  {
+    "id": 105,
+    "quote": "If people knew how hard I worked to get my mastery, it wouldn\u2019t seem so wonderful at all.",
+    "author": "Michelangelo"
+  },
+  {
+    "id": 106,
+    "quote": "A person who never made a mistake never tried anything new.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 107,
+    "quote": "Small deeds done are better than great deeds planned.",
+    "author": "Peter Marshall"
+  },
+  {
+    "id": 108,
+    "quote": "Quality is not an act, it is a habit.",
+    "author": "Aristotle"
+  },
+  {
+    "id": 109,
+    "quote": "Learning never exhausts the mind.",
+    "author": "Leonardo da Vinci"
+  },
+  {
+    "id": 110,
+    "quote": "The way to get started is to quit talking and begin doing.",
+    "author": "Walt Disney"
+  },
+  {
+    "id": 111,
+    "quote": "Courage is not having the strength to go on; it is going on when you don\u2019t have the strength.",
+    "author": "Theodore Roosevelt"
+  },
+  {
+    "id": 112,
+    "quote": "Curiosity will conquer fear even more than bravery will.",
+    "author": "James Stephens"
+  },
+  {
+    "id": 113,
+    "quote": "There are no shortcuts to any place worth going.",
+    "author": "Beverly Sills"
+  },
+  {
+    "id": 114,
+    "quote": "Fall seven times and stand up eight.",
+    "author": "Japanese Proverb"
+  },
+  {
+    "id": 115,
+    "quote": "The only way to achieve the impossible is to believe it is possible.",
+    "author": "Charles Kingsleigh"
+  },
+  {
+    "id": 116,
+    "quote": "The secret of getting ahead is getting started.",
+    "author": "Mark Twain"
+  },
+  {
+    "id": 117,
+    "quote": "Dream big and dare to fail.",
+    "author": "Norman Vaughan"
+  },
+  {
+    "id": 118,
+    "quote": "Don\u2019t watch the clock; do what it does. Keep going.",
+    "author": "Sam Levenson"
+  },
+  {
+    "id": 119,
+    "quote": "Work hard in silence, let your success be your noise.",
+    "author": "Frank Ocean"
+  },
+  {
+    "id": 120,
+    "quote": "Knowledge will bring you the opportunity to make a difference.",
+    "author": "Claire Fagin"
+  },
+  {
+    "id": 121,
+    "quote": "Genius is one percent inspiration and ninety-nine percent perspiration.",
+    "author": "Thomas Edison"
+  },
+  {
+    "id": 122,
+    "quote": "It always seems impossible until it\u2019s done.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "id": 123,
+    "quote": "The important thing is not to stop questioning. Curiosity has its own reason for existing.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 124,
+    "quote": "Hard work beats talent when talent doesn\u2019t work hard.",
+    "author": "Tim Notke"
+  },
+  {
+    "id": 125,
+    "quote": "I have no special talent. I am only passionately curious.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 126,
+    "quote": "Perseverance is not a long race; it is many short races one after the other.",
+    "author": "Walter Elliot"
+  },
+  {
+    "id": 127,
+    "quote": "The best way to predict your future is to create it.",
+    "author": "Abraham Lincoln"
+  },
+  {
+    "id": 128,
+    "quote": "Do not wait to strike till the iron is hot; but make it hot by striking.",
+    "author": "William Butler Yeats"
+  },
+  {
+    "id": 129,
+    "quote": "In the middle of every difficulty lies opportunity.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 130,
+    "quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 131,
+    "quote": "What we know is a drop, what we don't know is an ocean.",
+    "author": "Isaac Newton"
+  },
+  {
+    "id": 132,
+    "quote": "Curiosity is the wick in the candle of learning.",
+    "author": "William Arthur Ward"
+  },
+  {
+    "id": 133,
+    "quote": "Discipline is the bridge between goals and accomplishment.",
+    "author": "Jim Rohn"
+  },
+  {
+    "id": 134,
+    "quote": "The future belongs to those who prepare for it today.",
+    "author": "Malcolm X"
+  },
+  {
+    "id": 135,
+    "quote": "If people knew how hard I worked to get my mastery, it wouldn\u2019t seem so wonderful at all.",
+    "author": "Michelangelo"
+  },
+  {
+    "id": 136,
+    "quote": "A person who never made a mistake never tried anything new.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 137,
+    "quote": "Small deeds done are better than great deeds planned.",
+    "author": "Peter Marshall"
+  },
+  {
+    "id": 138,
+    "quote": "Quality is not an act, it is a habit.",
+    "author": "Aristotle"
+  },
+  {
+    "id": 139,
+    "quote": "Learning never exhausts the mind.",
+    "author": "Leonardo da Vinci"
+  },
+  {
+    "id": 140,
+    "quote": "The way to get started is to quit talking and begin doing.",
+    "author": "Walt Disney"
+  },
+  {
+    "id": 141,
+    "quote": "Courage is not having the strength to go on; it is going on when you don\u2019t have the strength.",
+    "author": "Theodore Roosevelt"
+  },
+  {
+    "id": 142,
+    "quote": "Curiosity will conquer fear even more than bravery will.",
+    "author": "James Stephens"
+  },
+  {
+    "id": 143,
+    "quote": "There are no shortcuts to any place worth going.",
+    "author": "Beverly Sills"
+  },
+  {
+    "id": 144,
+    "quote": "Fall seven times and stand up eight.",
+    "author": "Japanese Proverb"
+  },
+  {
+    "id": 145,
+    "quote": "The only way to achieve the impossible is to believe it is possible.",
+    "author": "Charles Kingsleigh"
+  },
+  {
+    "id": 146,
+    "quote": "The secret of getting ahead is getting started.",
+    "author": "Mark Twain"
+  },
+  {
+    "id": 147,
+    "quote": "Dream big and dare to fail.",
+    "author": "Norman Vaughan"
+  },
+  {
+    "id": 148,
+    "quote": "Don\u2019t watch the clock; do what it does. Keep going.",
+    "author": "Sam Levenson"
+  },
+  {
+    "id": 149,
+    "quote": "Work hard in silence, let your success be your noise.",
+    "author": "Frank Ocean"
+  },
+  {
+    "id": 150,
+    "quote": "Knowledge will bring you the opportunity to make a difference.",
+    "author": "Claire Fagin"
+  },
+  {
+    "id": 151,
+    "quote": "Genius is one percent inspiration and ninety-nine percent perspiration.",
+    "author": "Thomas Edison"
+  },
+  {
+    "id": 152,
+    "quote": "It always seems impossible until it\u2019s done.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "id": 153,
+    "quote": "The important thing is not to stop questioning. Curiosity has its own reason for existing.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 154,
+    "quote": "Hard work beats talent when talent doesn\u2019t work hard.",
+    "author": "Tim Notke"
+  },
+  {
+    "id": 155,
+    "quote": "I have no special talent. I am only passionately curious.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 156,
+    "quote": "Perseverance is not a long race; it is many short races one after the other.",
+    "author": "Walter Elliot"
+  },
+  {
+    "id": 157,
+    "quote": "The best way to predict your future is to create it.",
+    "author": "Abraham Lincoln"
+  },
+  {
+    "id": 158,
+    "quote": "Do not wait to strike till the iron is hot; but make it hot by striking.",
+    "author": "William Butler Yeats"
+  },
+  {
+    "id": 159,
+    "quote": "In the middle of every difficulty lies opportunity.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 160,
+    "quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 161,
+    "quote": "What we know is a drop, what we don't know is an ocean.",
+    "author": "Isaac Newton"
+  },
+  {
+    "id": 162,
+    "quote": "Curiosity is the wick in the candle of learning.",
+    "author": "William Arthur Ward"
+  },
+  {
+    "id": 163,
+    "quote": "Discipline is the bridge between goals and accomplishment.",
+    "author": "Jim Rohn"
+  },
+  {
+    "id": 164,
+    "quote": "The future belongs to those who prepare for it today.",
+    "author": "Malcolm X"
+  },
+  {
+    "id": 165,
+    "quote": "If people knew how hard I worked to get my mastery, it wouldn\u2019t seem so wonderful at all.",
+    "author": "Michelangelo"
+  },
+  {
+    "id": 166,
+    "quote": "A person who never made a mistake never tried anything new.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 167,
+    "quote": "Small deeds done are better than great deeds planned.",
+    "author": "Peter Marshall"
+  },
+  {
+    "id": 168,
+    "quote": "Quality is not an act, it is a habit.",
+    "author": "Aristotle"
+  },
+  {
+    "id": 169,
+    "quote": "Learning never exhausts the mind.",
+    "author": "Leonardo da Vinci"
+  },
+  {
+    "id": 170,
+    "quote": "The way to get started is to quit talking and begin doing.",
+    "author": "Walt Disney"
+  },
+  {
+    "id": 171,
+    "quote": "Courage is not having the strength to go on; it is going on when you don\u2019t have the strength.",
+    "author": "Theodore Roosevelt"
+  },
+  {
+    "id": 172,
+    "quote": "Curiosity will conquer fear even more than bravery will.",
+    "author": "James Stephens"
+  },
+  {
+    "id": 173,
+    "quote": "There are no shortcuts to any place worth going.",
+    "author": "Beverly Sills"
+  },
+  {
+    "id": 174,
+    "quote": "Fall seven times and stand up eight.",
+    "author": "Japanese Proverb"
+  },
+  {
+    "id": 175,
+    "quote": "The only way to achieve the impossible is to believe it is possible.",
+    "author": "Charles Kingsleigh"
+  },
+  {
+    "id": 176,
+    "quote": "The secret of getting ahead is getting started.",
+    "author": "Mark Twain"
+  },
+  {
+    "id": 177,
+    "quote": "Dream big and dare to fail.",
+    "author": "Norman Vaughan"
+  },
+  {
+    "id": 178,
+    "quote": "Don\u2019t watch the clock; do what it does. Keep going.",
+    "author": "Sam Levenson"
+  },
+  {
+    "id": 179,
+    "quote": "Work hard in silence, let your success be your noise.",
+    "author": "Frank Ocean"
+  },
+  {
+    "id": 180,
+    "quote": "Knowledge will bring you the opportunity to make a difference.",
+    "author": "Claire Fagin"
+  },
+  {
+    "id": 181,
+    "quote": "Genius is one percent inspiration and ninety-nine percent perspiration.",
+    "author": "Thomas Edison"
+  },
+  {
+    "id": 182,
+    "quote": "It always seems impossible until it\u2019s done.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "id": 183,
+    "quote": "The important thing is not to stop questioning. Curiosity has its own reason for existing.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 184,
+    "quote": "Hard work beats talent when talent doesn\u2019t work hard.",
+    "author": "Tim Notke"
+  },
+  {
+    "id": 185,
+    "quote": "I have no special talent. I am only passionately curious.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 186,
+    "quote": "Perseverance is not a long race; it is many short races one after the other.",
+    "author": "Walter Elliot"
+  },
+  {
+    "id": 187,
+    "quote": "The best way to predict your future is to create it.",
+    "author": "Abraham Lincoln"
+  },
+  {
+    "id": 188,
+    "quote": "Do not wait to strike till the iron is hot; but make it hot by striking.",
+    "author": "William Butler Yeats"
+  },
+  {
+    "id": 189,
+    "quote": "In the middle of every difficulty lies opportunity.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 190,
+    "quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 191,
+    "quote": "What we know is a drop, what we don't know is an ocean.",
+    "author": "Isaac Newton"
+  },
+  {
+    "id": 192,
+    "quote": "Curiosity is the wick in the candle of learning.",
+    "author": "William Arthur Ward"
+  },
+  {
+    "id": 193,
+    "quote": "Discipline is the bridge between goals and accomplishment.",
+    "author": "Jim Rohn"
+  },
+  {
+    "id": 194,
+    "quote": "The future belongs to those who prepare for it today.",
+    "author": "Malcolm X"
+  },
+  {
+    "id": 195,
+    "quote": "If people knew how hard I worked to get my mastery, it wouldn\u2019t seem so wonderful at all.",
+    "author": "Michelangelo"
+  },
+  {
+    "id": 196,
+    "quote": "A person who never made a mistake never tried anything new.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 197,
+    "quote": "Small deeds done are better than great deeds planned.",
+    "author": "Peter Marshall"
+  },
+  {
+    "id": 198,
+    "quote": "Quality is not an act, it is a habit.",
+    "author": "Aristotle"
+  },
+  {
+    "id": 199,
+    "quote": "Learning never exhausts the mind.",
+    "author": "Leonardo da Vinci"
+  },
+  {
+    "id": 200,
+    "quote": "The way to get started is to quit talking and begin doing.",
+    "author": "Walt Disney"
+  },
+  {
+    "id": 201,
+    "quote": "Courage is not having the strength to go on; it is going on when you don\u2019t have the strength.",
+    "author": "Theodore Roosevelt"
+  },
+  {
+    "id": 202,
+    "quote": "Curiosity will conquer fear even more than bravery will.",
+    "author": "James Stephens"
+  },
+  {
+    "id": 203,
+    "quote": "There are no shortcuts to any place worth going.",
+    "author": "Beverly Sills"
+  },
+  {
+    "id": 204,
+    "quote": "Fall seven times and stand up eight.",
+    "author": "Japanese Proverb"
+  },
+  {
+    "id": 205,
+    "quote": "The only way to achieve the impossible is to believe it is possible.",
+    "author": "Charles Kingsleigh"
+  },
+  {
+    "id": 206,
+    "quote": "The secret of getting ahead is getting started.",
+    "author": "Mark Twain"
+  },
+  {
+    "id": 207,
+    "quote": "Dream big and dare to fail.",
+    "author": "Norman Vaughan"
+  },
+  {
+    "id": 208,
+    "quote": "Don\u2019t watch the clock; do what it does. Keep going.",
+    "author": "Sam Levenson"
+  },
+  {
+    "id": 209,
+    "quote": "Work hard in silence, let your success be your noise.",
+    "author": "Frank Ocean"
+  },
+  {
+    "id": 210,
+    "quote": "Knowledge will bring you the opportunity to make a difference.",
+    "author": "Claire Fagin"
+  },
+  {
+    "id": 211,
+    "quote": "Genius is one percent inspiration and ninety-nine percent perspiration.",
+    "author": "Thomas Edison"
+  },
+  {
+    "id": 212,
+    "quote": "It always seems impossible until it\u2019s done.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "id": 213,
+    "quote": "The important thing is not to stop questioning. Curiosity has its own reason for existing.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 214,
+    "quote": "Hard work beats talent when talent doesn\u2019t work hard.",
+    "author": "Tim Notke"
+  },
+  {
+    "id": 215,
+    "quote": "I have no special talent. I am only passionately curious.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 216,
+    "quote": "Perseverance is not a long race; it is many short races one after the other.",
+    "author": "Walter Elliot"
+  },
+  {
+    "id": 217,
+    "quote": "The best way to predict your future is to create it.",
+    "author": "Abraham Lincoln"
+  },
+  {
+    "id": 218,
+    "quote": "Do not wait to strike till the iron is hot; but make it hot by striking.",
+    "author": "William Butler Yeats"
+  },
+  {
+    "id": 219,
+    "quote": "In the middle of every difficulty lies opportunity.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 220,
+    "quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 221,
+    "quote": "What we know is a drop, what we don't know is an ocean.",
+    "author": "Isaac Newton"
+  },
+  {
+    "id": 222,
+    "quote": "Curiosity is the wick in the candle of learning.",
+    "author": "William Arthur Ward"
+  },
+  {
+    "id": 223,
+    "quote": "Discipline is the bridge between goals and accomplishment.",
+    "author": "Jim Rohn"
+  },
+  {
+    "id": 224,
+    "quote": "The future belongs to those who prepare for it today.",
+    "author": "Malcolm X"
+  },
+  {
+    "id": 225,
+    "quote": "If people knew how hard I worked to get my mastery, it wouldn\u2019t seem so wonderful at all.",
+    "author": "Michelangelo"
+  },
+  {
+    "id": 226,
+    "quote": "A person who never made a mistake never tried anything new.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 227,
+    "quote": "Small deeds done are better than great deeds planned.",
+    "author": "Peter Marshall"
+  },
+  {
+    "id": 228,
+    "quote": "Quality is not an act, it is a habit.",
+    "author": "Aristotle"
+  },
+  {
+    "id": 229,
+    "quote": "Learning never exhausts the mind.",
+    "author": "Leonardo da Vinci"
+  },
+  {
+    "id": 230,
+    "quote": "The way to get started is to quit talking and begin doing.",
+    "author": "Walt Disney"
+  },
+  {
+    "id": 231,
+    "quote": "Courage is not having the strength to go on; it is going on when you don\u2019t have the strength.",
+    "author": "Theodore Roosevelt"
+  },
+  {
+    "id": 232,
+    "quote": "Curiosity will conquer fear even more than bravery will.",
+    "author": "James Stephens"
+  },
+  {
+    "id": 233,
+    "quote": "There are no shortcuts to any place worth going.",
+    "author": "Beverly Sills"
+  },
+  {
+    "id": 234,
+    "quote": "Fall seven times and stand up eight.",
+    "author": "Japanese Proverb"
+  },
+  {
+    "id": 235,
+    "quote": "The only way to achieve the impossible is to believe it is possible.",
+    "author": "Charles Kingsleigh"
+  },
+  {
+    "id": 236,
+    "quote": "The secret of getting ahead is getting started.",
+    "author": "Mark Twain"
+  },
+  {
+    "id": 237,
+    "quote": "Dream big and dare to fail.",
+    "author": "Norman Vaughan"
+  },
+  {
+    "id": 238,
+    "quote": "Don\u2019t watch the clock; do what it does. Keep going.",
+    "author": "Sam Levenson"
+  },
+  {
+    "id": 239,
+    "quote": "Work hard in silence, let your success be your noise.",
+    "author": "Frank Ocean"
+  },
+  {
+    "id": 240,
+    "quote": "Knowledge will bring you the opportunity to make a difference.",
+    "author": "Claire Fagin"
+  },
+  {
+    "id": 241,
+    "quote": "Genius is one percent inspiration and ninety-nine percent perspiration.",
+    "author": "Thomas Edison"
+  },
+  {
+    "id": 242,
+    "quote": "It always seems impossible until it\u2019s done.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "id": 243,
+    "quote": "The important thing is not to stop questioning. Curiosity has its own reason for existing.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 244,
+    "quote": "Hard work beats talent when talent doesn\u2019t work hard.",
+    "author": "Tim Notke"
+  },
+  {
+    "id": 245,
+    "quote": "I have no special talent. I am only passionately curious.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 246,
+    "quote": "Perseverance is not a long race; it is many short races one after the other.",
+    "author": "Walter Elliot"
+  },
+  {
+    "id": 247,
+    "quote": "The best way to predict your future is to create it.",
+    "author": "Abraham Lincoln"
+  },
+  {
+    "id": 248,
+    "quote": "Do not wait to strike till the iron is hot; but make it hot by striking.",
+    "author": "William Butler Yeats"
+  },
+  {
+    "id": 249,
+    "quote": "In the middle of every difficulty lies opportunity.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 250,
+    "quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 251,
+    "quote": "What we know is a drop, what we don't know is an ocean.",
+    "author": "Isaac Newton"
+  },
+  {
+    "id": 252,
+    "quote": "Curiosity is the wick in the candle of learning.",
+    "author": "William Arthur Ward"
+  },
+  {
+    "id": 253,
+    "quote": "Discipline is the bridge between goals and accomplishment.",
+    "author": "Jim Rohn"
+  },
+  {
+    "id": 254,
+    "quote": "The future belongs to those who prepare for it today.",
+    "author": "Malcolm X"
+  },
+  {
+    "id": 255,
+    "quote": "If people knew how hard I worked to get my mastery, it wouldn\u2019t seem so wonderful at all.",
+    "author": "Michelangelo"
+  },
+  {
+    "id": 256,
+    "quote": "A person who never made a mistake never tried anything new.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 257,
+    "quote": "Small deeds done are better than great deeds planned.",
+    "author": "Peter Marshall"
+  },
+  {
+    "id": 258,
+    "quote": "Quality is not an act, it is a habit.",
+    "author": "Aristotle"
+  },
+  {
+    "id": 259,
+    "quote": "Learning never exhausts the mind.",
+    "author": "Leonardo da Vinci"
+  },
+  {
+    "id": 260,
+    "quote": "The way to get started is to quit talking and begin doing.",
+    "author": "Walt Disney"
+  },
+  {
+    "id": 261,
+    "quote": "Courage is not having the strength to go on; it is going on when you don\u2019t have the strength.",
+    "author": "Theodore Roosevelt"
+  },
+  {
+    "id": 262,
+    "quote": "Curiosity will conquer fear even more than bravery will.",
+    "author": "James Stephens"
+  },
+  {
+    "id": 263,
+    "quote": "There are no shortcuts to any place worth going.",
+    "author": "Beverly Sills"
+  },
+  {
+    "id": 264,
+    "quote": "Fall seven times and stand up eight.",
+    "author": "Japanese Proverb"
+  },
+  {
+    "id": 265,
+    "quote": "The only way to achieve the impossible is to believe it is possible.",
+    "author": "Charles Kingsleigh"
+  },
+  {
+    "id": 266,
+    "quote": "The secret of getting ahead is getting started.",
+    "author": "Mark Twain"
+  },
+  {
+    "id": 267,
+    "quote": "Dream big and dare to fail.",
+    "author": "Norman Vaughan"
+  },
+  {
+    "id": 268,
+    "quote": "Don\u2019t watch the clock; do what it does. Keep going.",
+    "author": "Sam Levenson"
+  },
+  {
+    "id": 269,
+    "quote": "Work hard in silence, let your success be your noise.",
+    "author": "Frank Ocean"
+  },
+  {
+    "id": 270,
+    "quote": "Knowledge will bring you the opportunity to make a difference.",
+    "author": "Claire Fagin"
+  },
+  {
+    "id": 271,
+    "quote": "Genius is one percent inspiration and ninety-nine percent perspiration.",
+    "author": "Thomas Edison"
+  },
+  {
+    "id": 272,
+    "quote": "It always seems impossible until it\u2019s done.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "id": 273,
+    "quote": "The important thing is not to stop questioning. Curiosity has its own reason for existing.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 274,
+    "quote": "Hard work beats talent when talent doesn\u2019t work hard.",
+    "author": "Tim Notke"
+  },
+  {
+    "id": 275,
+    "quote": "I have no special talent. I am only passionately curious.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 276,
+    "quote": "Perseverance is not a long race; it is many short races one after the other.",
+    "author": "Walter Elliot"
+  },
+  {
+    "id": 277,
+    "quote": "The best way to predict your future is to create it.",
+    "author": "Abraham Lincoln"
+  },
+  {
+    "id": 278,
+    "quote": "Do not wait to strike till the iron is hot; but make it hot by striking.",
+    "author": "William Butler Yeats"
+  },
+  {
+    "id": 279,
+    "quote": "In the middle of every difficulty lies opportunity.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 280,
+    "quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 281,
+    "quote": "What we know is a drop, what we don't know is an ocean.",
+    "author": "Isaac Newton"
+  },
+  {
+    "id": 282,
+    "quote": "Curiosity is the wick in the candle of learning.",
+    "author": "William Arthur Ward"
+  },
+  {
+    "id": 283,
+    "quote": "Discipline is the bridge between goals and accomplishment.",
+    "author": "Jim Rohn"
+  },
+  {
+    "id": 284,
+    "quote": "The future belongs to those who prepare for it today.",
+    "author": "Malcolm X"
+  },
+  {
+    "id": 285,
+    "quote": "If people knew how hard I worked to get my mastery, it wouldn\u2019t seem so wonderful at all.",
+    "author": "Michelangelo"
+  },
+  {
+    "id": 286,
+    "quote": "A person who never made a mistake never tried anything new.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 287,
+    "quote": "Small deeds done are better than great deeds planned.",
+    "author": "Peter Marshall"
+  },
+  {
+    "id": 288,
+    "quote": "Quality is not an act, it is a habit.",
+    "author": "Aristotle"
+  },
+  {
+    "id": 289,
+    "quote": "Learning never exhausts the mind.",
+    "author": "Leonardo da Vinci"
+  },
+  {
+    "id": 290,
+    "quote": "The way to get started is to quit talking and begin doing.",
+    "author": "Walt Disney"
+  },
+  {
+    "id": 291,
+    "quote": "Courage is not having the strength to go on; it is going on when you don\u2019t have the strength.",
+    "author": "Theodore Roosevelt"
+  },
+  {
+    "id": 292,
+    "quote": "Curiosity will conquer fear even more than bravery will.",
+    "author": "James Stephens"
+  },
+  {
+    "id": 293,
+    "quote": "There are no shortcuts to any place worth going.",
+    "author": "Beverly Sills"
+  },
+  {
+    "id": 294,
+    "quote": "Fall seven times and stand up eight.",
+    "author": "Japanese Proverb"
+  },
+  {
+    "id": 295,
+    "quote": "The only way to achieve the impossible is to believe it is possible.",
+    "author": "Charles Kingsleigh"
+  },
+  {
+    "id": 296,
+    "quote": "The secret of getting ahead is getting started.",
+    "author": "Mark Twain"
+  },
+  {
+    "id": 297,
+    "quote": "Dream big and dare to fail.",
+    "author": "Norman Vaughan"
+  },
+  {
+    "id": 298,
+    "quote": "Don\u2019t watch the clock; do what it does. Keep going.",
+    "author": "Sam Levenson"
+  },
+  {
+    "id": 299,
+    "quote": "Work hard in silence, let your success be your noise.",
+    "author": "Frank Ocean"
+  },
+  {
+    "id": 300,
+    "quote": "Knowledge will bring you the opportunity to make a difference.",
+    "author": "Claire Fagin"
+  },
+  {
+    "id": 301,
+    "quote": "Genius is one percent inspiration and ninety-nine percent perspiration.",
+    "author": "Thomas Edison"
+  },
+  {
+    "id": 302,
+    "quote": "It always seems impossible until it\u2019s done.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "id": 303,
+    "quote": "The important thing is not to stop questioning. Curiosity has its own reason for existing.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 304,
+    "quote": "Hard work beats talent when talent doesn\u2019t work hard.",
+    "author": "Tim Notke"
+  },
+  {
+    "id": 305,
+    "quote": "I have no special talent. I am only passionately curious.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 306,
+    "quote": "Perseverance is not a long race; it is many short races one after the other.",
+    "author": "Walter Elliot"
+  },
+  {
+    "id": 307,
+    "quote": "The best way to predict your future is to create it.",
+    "author": "Abraham Lincoln"
+  },
+  {
+    "id": 308,
+    "quote": "Do not wait to strike till the iron is hot; but make it hot by striking.",
+    "author": "William Butler Yeats"
+  },
+  {
+    "id": 309,
+    "quote": "In the middle of every difficulty lies opportunity.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 310,
+    "quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 311,
+    "quote": "What we know is a drop, what we don't know is an ocean.",
+    "author": "Isaac Newton"
+  },
+  {
+    "id": 312,
+    "quote": "Curiosity is the wick in the candle of learning.",
+    "author": "William Arthur Ward"
+  },
+  {
+    "id": 313,
+    "quote": "Discipline is the bridge between goals and accomplishment.",
+    "author": "Jim Rohn"
+  },
+  {
+    "id": 314,
+    "quote": "The future belongs to those who prepare for it today.",
+    "author": "Malcolm X"
+  },
+  {
+    "id": 315,
+    "quote": "If people knew how hard I worked to get my mastery, it wouldn\u2019t seem so wonderful at all.",
+    "author": "Michelangelo"
+  },
+  {
+    "id": 316,
+    "quote": "A person who never made a mistake never tried anything new.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 317,
+    "quote": "Small deeds done are better than great deeds planned.",
+    "author": "Peter Marshall"
+  },
+  {
+    "id": 318,
+    "quote": "Quality is not an act, it is a habit.",
+    "author": "Aristotle"
+  },
+  {
+    "id": 319,
+    "quote": "Learning never exhausts the mind.",
+    "author": "Leonardo da Vinci"
+  },
+  {
+    "id": 320,
+    "quote": "The way to get started is to quit talking and begin doing.",
+    "author": "Walt Disney"
+  },
+  {
+    "id": 321,
+    "quote": "Courage is not having the strength to go on; it is going on when you don\u2019t have the strength.",
+    "author": "Theodore Roosevelt"
+  },
+  {
+    "id": 322,
+    "quote": "Curiosity will conquer fear even more than bravery will.",
+    "author": "James Stephens"
+  },
+  {
+    "id": 323,
+    "quote": "There are no shortcuts to any place worth going.",
+    "author": "Beverly Sills"
+  },
+  {
+    "id": 324,
+    "quote": "Fall seven times and stand up eight.",
+    "author": "Japanese Proverb"
+  },
+  {
+    "id": 325,
+    "quote": "The only way to achieve the impossible is to believe it is possible.",
+    "author": "Charles Kingsleigh"
+  },
+  {
+    "id": 326,
+    "quote": "The secret of getting ahead is getting started.",
+    "author": "Mark Twain"
+  },
+  {
+    "id": 327,
+    "quote": "Dream big and dare to fail.",
+    "author": "Norman Vaughan"
+  },
+  {
+    "id": 328,
+    "quote": "Don\u2019t watch the clock; do what it does. Keep going.",
+    "author": "Sam Levenson"
+  },
+  {
+    "id": 329,
+    "quote": "Work hard in silence, let your success be your noise.",
+    "author": "Frank Ocean"
+  },
+  {
+    "id": 330,
+    "quote": "Knowledge will bring you the opportunity to make a difference.",
+    "author": "Claire Fagin"
+  },
+  {
+    "id": 331,
+    "quote": "Genius is one percent inspiration and ninety-nine percent perspiration.",
+    "author": "Thomas Edison"
+  },
+  {
+    "id": 332,
+    "quote": "It always seems impossible until it\u2019s done.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "id": 333,
+    "quote": "The important thing is not to stop questioning. Curiosity has its own reason for existing.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 334,
+    "quote": "Hard work beats talent when talent doesn\u2019t work hard.",
+    "author": "Tim Notke"
+  },
+  {
+    "id": 335,
+    "quote": "I have no special talent. I am only passionately curious.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 336,
+    "quote": "Perseverance is not a long race; it is many short races one after the other.",
+    "author": "Walter Elliot"
+  },
+  {
+    "id": 337,
+    "quote": "The best way to predict your future is to create it.",
+    "author": "Abraham Lincoln"
+  },
+  {
+    "id": 338,
+    "quote": "Do not wait to strike till the iron is hot; but make it hot by striking.",
+    "author": "William Butler Yeats"
+  },
+  {
+    "id": 339,
+    "quote": "In the middle of every difficulty lies opportunity.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 340,
+    "quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 341,
+    "quote": "What we know is a drop, what we don't know is an ocean.",
+    "author": "Isaac Newton"
+  },
+  {
+    "id": 342,
+    "quote": "Curiosity is the wick in the candle of learning.",
+    "author": "William Arthur Ward"
+  },
+  {
+    "id": 343,
+    "quote": "Discipline is the bridge between goals and accomplishment.",
+    "author": "Jim Rohn"
+  },
+  {
+    "id": 344,
+    "quote": "The future belongs to those who prepare for it today.",
+    "author": "Malcolm X"
+  },
+  {
+    "id": 345,
+    "quote": "If people knew how hard I worked to get my mastery, it wouldn\u2019t seem so wonderful at all.",
+    "author": "Michelangelo"
+  },
+  {
+    "id": 346,
+    "quote": "A person who never made a mistake never tried anything new.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 347,
+    "quote": "Small deeds done are better than great deeds planned.",
+    "author": "Peter Marshall"
+  },
+  {
+    "id": 348,
+    "quote": "Quality is not an act, it is a habit.",
+    "author": "Aristotle"
+  },
+  {
+    "id": 349,
+    "quote": "Learning never exhausts the mind.",
+    "author": "Leonardo da Vinci"
+  },
+  {
+    "id": 350,
+    "quote": "The way to get started is to quit talking and begin doing.",
+    "author": "Walt Disney"
+  },
+  {
+    "id": 351,
+    "quote": "Courage is not having the strength to go on; it is going on when you don\u2019t have the strength.",
+    "author": "Theodore Roosevelt"
+  },
+  {
+    "id": 352,
+    "quote": "Curiosity will conquer fear even more than bravery will.",
+    "author": "James Stephens"
+  },
+  {
+    "id": 353,
+    "quote": "There are no shortcuts to any place worth going.",
+    "author": "Beverly Sills"
+  },
+  {
+    "id": 354,
+    "quote": "Fall seven times and stand up eight.",
+    "author": "Japanese Proverb"
+  },
+  {
+    "id": 355,
+    "quote": "The only way to achieve the impossible is to believe it is possible.",
+    "author": "Charles Kingsleigh"
+  },
+  {
+    "id": 356,
+    "quote": "The secret of getting ahead is getting started.",
+    "author": "Mark Twain"
+  },
+  {
+    "id": 357,
+    "quote": "Dream big and dare to fail.",
+    "author": "Norman Vaughan"
+  },
+  {
+    "id": 358,
+    "quote": "Don\u2019t watch the clock; do what it does. Keep going.",
+    "author": "Sam Levenson"
+  },
+  {
+    "id": 359,
+    "quote": "Work hard in silence, let your success be your noise.",
+    "author": "Frank Ocean"
+  },
+  {
+    "id": 360,
+    "quote": "Knowledge will bring you the opportunity to make a difference.",
+    "author": "Claire Fagin"
+  },
+  {
+    "id": 361,
+    "quote": "Genius is one percent inspiration and ninety-nine percent perspiration.",
+    "author": "Thomas Edison"
+  },
+  {
+    "id": 362,
+    "quote": "It always seems impossible until it\u2019s done.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "id": 363,
+    "quote": "The important thing is not to stop questioning. Curiosity has its own reason for existing.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 364,
+    "quote": "Hard work beats talent when talent doesn\u2019t work hard.",
+    "author": "Tim Notke"
+  },
+  {
+    "id": 365,
+    "quote": "I have no special talent. I am only passionately curious.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 366,
+    "quote": "Perseverance is not a long race; it is many short races one after the other.",
+    "author": "Walter Elliot"
+  },
+  {
+    "id": 367,
+    "quote": "The best way to predict your future is to create it.",
+    "author": "Abraham Lincoln"
+  },
+  {
+    "id": 368,
+    "quote": "Do not wait to strike till the iron is hot; but make it hot by striking.",
+    "author": "William Butler Yeats"
+  },
+  {
+    "id": 369,
+    "quote": "In the middle of every difficulty lies opportunity.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 370,
+    "quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 371,
+    "quote": "What we know is a drop, what we don't know is an ocean.",
+    "author": "Isaac Newton"
+  },
+  {
+    "id": 372,
+    "quote": "Curiosity is the wick in the candle of learning.",
+    "author": "William Arthur Ward"
+  },
+  {
+    "id": 373,
+    "quote": "Discipline is the bridge between goals and accomplishment.",
+    "author": "Jim Rohn"
+  },
+  {
+    "id": 374,
+    "quote": "The future belongs to those who prepare for it today.",
+    "author": "Malcolm X"
+  },
+  {
+    "id": 375,
+    "quote": "If people knew how hard I worked to get my mastery, it wouldn\u2019t seem so wonderful at all.",
+    "author": "Michelangelo"
+  },
+  {
+    "id": 376,
+    "quote": "A person who never made a mistake never tried anything new.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 377,
+    "quote": "Small deeds done are better than great deeds planned.",
+    "author": "Peter Marshall"
+  },
+  {
+    "id": 378,
+    "quote": "Quality is not an act, it is a habit.",
+    "author": "Aristotle"
+  },
+  {
+    "id": 379,
+    "quote": "Learning never exhausts the mind.",
+    "author": "Leonardo da Vinci"
+  },
+  {
+    "id": 380,
+    "quote": "The way to get started is to quit talking and begin doing.",
+    "author": "Walt Disney"
+  },
+  {
+    "id": 381,
+    "quote": "Courage is not having the strength to go on; it is going on when you don\u2019t have the strength.",
+    "author": "Theodore Roosevelt"
+  },
+  {
+    "id": 382,
+    "quote": "Curiosity will conquer fear even more than bravery will.",
+    "author": "James Stephens"
+  },
+  {
+    "id": 383,
+    "quote": "There are no shortcuts to any place worth going.",
+    "author": "Beverly Sills"
+  },
+  {
+    "id": 384,
+    "quote": "Fall seven times and stand up eight.",
+    "author": "Japanese Proverb"
+  },
+  {
+    "id": 385,
+    "quote": "The only way to achieve the impossible is to believe it is possible.",
+    "author": "Charles Kingsleigh"
+  },
+  {
+    "id": 386,
+    "quote": "The secret of getting ahead is getting started.",
+    "author": "Mark Twain"
+  },
+  {
+    "id": 387,
+    "quote": "Dream big and dare to fail.",
+    "author": "Norman Vaughan"
+  },
+  {
+    "id": 388,
+    "quote": "Don\u2019t watch the clock; do what it does. Keep going.",
+    "author": "Sam Levenson"
+  },
+  {
+    "id": 389,
+    "quote": "Work hard in silence, let your success be your noise.",
+    "author": "Frank Ocean"
+  },
+  {
+    "id": 390,
+    "quote": "Knowledge will bring you the opportunity to make a difference.",
+    "author": "Claire Fagin"
+  },
+  {
+    "id": 391,
+    "quote": "Genius is one percent inspiration and ninety-nine percent perspiration.",
+    "author": "Thomas Edison"
+  },
+  {
+    "id": 392,
+    "quote": "It always seems impossible until it\u2019s done.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "id": 393,
+    "quote": "The important thing is not to stop questioning. Curiosity has its own reason for existing.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 394,
+    "quote": "Hard work beats talent when talent doesn\u2019t work hard.",
+    "author": "Tim Notke"
+  },
+  {
+    "id": 395,
+    "quote": "I have no special talent. I am only passionately curious.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 396,
+    "quote": "Perseverance is not a long race; it is many short races one after the other.",
+    "author": "Walter Elliot"
+  },
+  {
+    "id": 397,
+    "quote": "The best way to predict your future is to create it.",
+    "author": "Abraham Lincoln"
+  },
+  {
+    "id": 398,
+    "quote": "Do not wait to strike till the iron is hot; but make it hot by striking.",
+    "author": "William Butler Yeats"
+  },
+  {
+    "id": 399,
+    "quote": "In the middle of every difficulty lies opportunity.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 400,
+    "quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    "author": "Winston Churchill"
+  }
+]

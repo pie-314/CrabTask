@@ -240,126 +240,6 @@
     "due_date": "2025-09-09"
   },
   {
-    "id": "41",
-    "title": "Morning run",
-    "completed": false,
-    "due_date": "2025-09-10"
-  },
-  {
-    "id": "42",
-    "title": "Check flight tickets",
-    "completed": true,
-    "due_date": "2025-09-10"
-  },
-  {
-    "id": "43",
-    "title": "Weekly grocery shopping",
-    "completed": false,
-    "due_date": "2025-09-10"
-  },
-  {
-    "id": "44",
-    "title": "Practice coding problems",
-    "completed": true,
-    "due_date": "2025-09-10"
-  },
-  {
-    "id": "45",
-    "title": "Dinner with family",
-    "completed": false,
-    "due_date": "2025-09-10"
-  },
-  {
-    "id": "46",
-    "title": "Organize bookshelf",
-    "completed": false,
-    "due_date": "2025-09-10"
-  },
-  {
-    "id": "47",
-    "title": "Review lecture notes",
-    "completed": true,
-    "due_date": "2025-09-10"
-  },
-  {
-    "id": "48",
-    "title": "Repair bike tire",
-    "completed": false,
-    "due_date": "2025-09-10"
-  },
-  {
-    "id": "49",
-    "title": "Update resume",
-    "completed": false,
-    "due_date": "2025-09-10"
-  },
-  {
-    "id": "50",
-    "title": "Call dentist",
-    "completed": true,
-    "due_date": "2025-09-10"
-  },
-  {
-    "id": "51",
-    "title": "Weekly review",
-    "completed": false,
-    "due_date": "2025-09-11"
-  },
-  {
-    "id": "52",
-    "title": "Pay credit card bill",
-    "completed": true,
-    "due_date": "2025-09-11"
-  },
-  {
-    "id": "53",
-    "title": "Practice guitar",
-    "completed": false,
-    "due_date": "2025-09-11"
-  },
-  {
-    "id": "54",
-    "title": "Prepare for interview",
-    "completed": true,
-    "due_date": "2025-09-11"
-  },
-  {
-    "id": "55",
-    "title": "Clean bathroom",
-    "completed": false,
-    "due_date": "2025-09-11"
-  },
-  {
-    "id": "56",
-    "title": "Write essay draft",
-    "completed": false,
-    "due_date": "2025-09-11"
-  },
-  {
-    "id": "57",
-    "title": "Check car service",
-    "completed": true,
-    "due_date": "2025-09-11"
-  },
-  {
-    "id": "58",
-    "title": "Grocery shopping list",
-    "completed": false,
-    "due_date": "2025-09-11"
-  },
-  {
-    "id": "59",
-    "title": "Work on side project",
-    "completed": true,
-    "due_date": "2025-09-11"
-  },
-  {
-    "id": "60",
-    "title": "Clean windows",
-    "completed": false,
-    "due_date": "2025-09-11"
-  },
-  {
     "id": "61",
     "title": "Morning meditation",
     "completed": false,
@@ -444,18 +324,6 @@
     "due_date": "2025-09-09"
   },
   {
-    "id": "75",
-    "title": "Grocery run",
-    "completed": true,
-    "due_date": "2025-09-10"
-  },
-  {
-    "id": "76",
-    "title": "Morning jog",
-    "completed": false,
-    "due_date": "2025-09-11"
-  },
-  {
     "id": "77",
     "title": "Organize wardrobe",
     "completed": true,
@@ -484,18 +352,6 @@
     "title": "Buy coffee beans",
     "completed": true,
     "due_date": "2025-09-09"
-  },
-  {
-    "id": "82",
-    "title": "Fix bedroom light",
-    "completed": false,
-    "due_date": "2025-09-10"
-  },
-  {
-    "id": "83",
-    "title": "Prepare speech",
-    "completed": true,
-    "due_date": "2025-09-11"
   },
   {
     "id": "84",
@@ -528,18 +384,6 @@
     "due_date": "2025-09-09"
   },
   {
-    "id": "89",
-    "title": "Clean garage",
-    "completed": true,
-    "due_date": "2025-09-10"
-  },
-  {
-    "id": "90",
-    "title": "Weekly call with mentor",
-    "completed": false,
-    "due_date": "2025-09-11"
-  },
-  {
     "id": "91",
     "title": "Write blog draft",
     "completed": false,
@@ -570,18 +414,6 @@
     "due_date": "2025-09-09"
   },
   {
-    "id": "96",
-    "title": "Prepare project demo",
-    "completed": true,
-    "due_date": "2025-09-10"
-  },
-  {
-    "id": "97",
-    "title": "Do laundry",
-    "completed": false,
-    "due_date": "2025-09-11"
-  },
-  {
     "id": "98",
     "title": "Read newspaper",
     "completed": true,
@@ -604,5 +436,29 @@
     "title": "eat food",
     "completed": false,
     "due_date": "2025-09-06"
+  },
+  {
+    "id": "88",
+    "title": "Work on that lexer",
+    "completed": false,
+    "due_date": "2025-09-10"
+  },
+  {
+    "id": "89",
+    "title": "Read some more rust",
+    "completed": false,
+    "due_date": "2025-09-10"
+  },
+  {
+    "id": "91",
+    "title": "improve documentation",
+    "completed": false,
+    "due_date": "2025-09-10"
+  },
+  {
+    "id": "77",
+    "title": "Complete the parser",
+    "completed": false,
+    "due_date": "2025-09-11"
   }
 ]

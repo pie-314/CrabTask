@@ -25,3 +25,10 @@ pub struct Todo {
     //pub priority: String, //Not using in present version
     //pub notes: String,    //Not using in present version
 }
+
+#[derive(Deserialize, Serialize, Debug)]
+pub struct Quote {
+    pub id: String,
+    pub quote: String,
+    pub author: String,
+}
