@@ -29,5 +29,5 @@ jobs:
     - name: Upload macOS binary
       uses: actions/upload-artifact@v4
       with:
-        name: todo-in-rust-macos
-        path: target/release/todo-in-rust
+        name: CrabTask-macos
+        path: target/release/CrabTask
